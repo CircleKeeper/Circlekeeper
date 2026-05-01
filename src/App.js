@@ -20,47 +20,86 @@ const CONTACT_COLORS = ["#9b7fbd","#c47fa0","#7a9fbf","#6aab8a","#c4956a","#7fbd
 
 const DEFAULT_CONTACTS = [
   {
-    id: 1, name: "Rhonda Elmore", initials: "RE", tier: "close", cadenceDays: 3,
-    birthday: null, lastContact: "2026-03-04", preferredChannel: "text",
-    notes: "Quilter and Jane Austen devotee. Warm and literary. Planning a Nova Scotia trip together.",
-    address: "", favoriteRestaurant: "", goToGesture: "", loveLanguages: [],
-    significantOther: { name: "", birthday: "" }, kids: [],
+    id: 1, name: "Claire Navarro", initials: "CN", tier: "close", cadenceDays: 3,
+    birthday: "1984-09-12", lastContact: "2026-04-22", preferredChannel: "text",
+    notes: "Elementary school teacher with a huge laugh and zero filter. Warm, funny, fiercely loyal. Going through a separation after 12 years of marriage and handling it with more grace than anyone has a right to.",
+    address: "214 Birchwood Lane\nAustin, TX 78701", favoriteRestaurant: "Lupe's Tacos", goToGesture: "Iced chai latte on her doorstep",
+    guiltyPleasure: "Real Housewives of anywhere", favoriteBeverage: "Iced chai latte", favoriteSnack: "Takis",
+    currentHardThing: "Navigating a separation after 12 years. Single parenting Mateo and Sofia while keeping it together for them.",
+    howToSupport: "Wants to talk it through — she needs to feel heard, not fixed. Just showing up is everything.",
+    whatMakesThemLaugh: "Self-deprecating humor and 90s sitcom references. She can quote Friends in her sleep.",
+    currentlyInto: "Pottery classes on Saturday mornings — says it's the only hour of the week that's just hers.",
+    faith: "Catholic", prayerRequests: "Peace through the separation. Strength for her kids, especially Mateo who's been struggling.",
+    loveLanguages: ["words", "time"],
+    significantOther: { name: "", birthday: "" },
+    kids: [{ name: "Mateo", birthday: "2016-03-08" }, { name: "Sofia", birthday: "2019-11-21" }],
+    pets: [],
     lifeEvents: [
-      { date: "2026-02-01", event: "Daughter diagnosed with Cushing's disease", category: "family" },
-      { date: "2026-03-01", event: "Planning Nova Scotia trip together", category: "personal" },
+      { date: "2026-03-15", event: "Moved into her own apartment for the first time", category: "life" },
+      { date: "2026-01-10", event: "Told the kids about the separation", category: "family" },
     ],
     color: "#9b7fbd"
   },
   {
-    id: 2, name: "Trish Bauer", initials: "TB", tier: "friend", cadenceDays: 14,
-    birthday: null, lastContact: "2026-02-01", preferredChannel: "text",
-    notes: "Family is her heart. Huge movie fan. Currently going through breast cancer treatment.",
-    address: "", favoriteRestaurant: "", goToGesture: "", loveLanguages: [],
-    significantOther: { name: "", birthday: "" }, kids: [],
+    id: 2, name: "Tom Okafor", initials: "TO", tier: "friend", cadenceDays: 14,
+    birthday: "1981-06-03", lastContact: "2026-04-01", preferredChannel: "call",
+    notes: "Former college roommate. Software engineer by day, woodworker by night. Dry humor, big heart, and incapable of small talk. Just relocated to Portland with his wife Kezia.",
+    address: "88 Maple Street\nPortland, OR 97201", favoriteRestaurant: "Pok Pok", goToGesture: "A good bottle of bourbon",
+    guiltyPleasure: "Competitive reality cooking shows — very serious about them", favoriteBeverage: "Black coffee, no exceptions", favoriteSnack: "Salt and vinegar chips",
+    currentHardThing: "",
+    howToSupport: "Doesn't process out loud — give him space and he'll come to you when he's ready.",
+    whatMakesThemLaugh: "Absurdist humor and terrible puns. The worse the pun, the better.",
+    currentlyInto: "Sourdough bread baking. He texts photos of every loaf.",
+    faith: "", prayerRequests: "",
+    loveLanguages: ["acts"],
+    significantOther: { name: "Kezia", birthday: "1983-02-14" },
+    kids: [],
+    pets: [{ name: "Biscuit", type: "Beagle" }],
     lifeEvents: [
-      { date: "2026-01-15", event: "Began breast cancer treatment", category: "health" },
-    ],
-    color: "#c47fa0"
-  },
-  {
-    id: 3, name: "Dana Hoffman", initials: "DH", tier: "close", cadenceDays: 14,
-    birthday: "1980-05-04", lastContact: "2026-02-28", preferredChannel: "text",
-    notes: "Artist and creative spirit. Loves her dog Liko. Devoted Prince fan. Draws beautifully.",
-    address: "", favoriteRestaurant: "", goToGesture: "", loveLanguages: [],
-    significantOther: { name: "", birthday: "" }, kids: [],
-    lifeEvents: [
-      { date: "2026-02-10", event: "Started actively searching for a new job", category: "career" },
+      { date: "2026-02-01", event: "Relocated from Chicago to Portland", category: "life" },
+      { date: "2025-11-15", event: "Launched a woodworking Etsy shop — first sale in two weeks", category: "career" },
     ],
     color: "#7a9fbf"
   },
   {
-    id: 4, name: "Shasta Foy", initials: "SF", tier: "close", cadenceDays: 14,
-    birthday: null, lastContact: "2026-01-15", preferredChannel: "text",
-    notes: "Fellow CEO. Cyclist and former basketball player. Exploring her second act.",
-    address: "", favoriteRestaurant: "", goToGesture: "", loveLanguages: [],
-    significantOther: { name: "", birthday: "" }, kids: [],
+    id: 3, name: "Priya Mehta", initials: "PM", tier: "close", cadenceDays: 14,
+    birthday: "1986-04-28", lastContact: "2026-04-10", preferredChannel: "text",
+    notes: "Radiologist and quiet force of nature. Meticulous, deeply creative, and one of the kindest people alive. Huge Bollywood fan. Has been going through IVF for over a year — second round now.",
+    address: "", favoriteRestaurant: "Rasika (or any great Indian place)", goToGesture: "Drop off dinner — she never thinks to eat when she's stressed",
+    guiltyPleasure: "K-dramas until 1am", favoriteBeverage: "Masala chai, the real kind", favoriteSnack: "Mango with chili and lime",
+    currentHardThing: "Second round of IVF. She is hopeful but exhausted and trying not to let it take over her whole identity.",
+    howToSupport: "Doesn't want advice or silver linings — just company and normalcy. Treat her like a person, not a patient.",
+    whatMakesThemLaugh: "Her husband Raj's terrible dancing. And anything absurd — she has a surprisingly dark sense of humor.",
+    currentlyInto: "Watercolor painting. She's surprisingly good and very self-deprecating about it.",
+    faith: "Hindu", prayerRequests: "The IVF working. Peace either way.",
+    loveLanguages: ["time", "acts"],
+    significantOther: { name: "Raj", birthday: "1984-04-03" },
+    kids: [],
+    pets: [],
     lifeEvents: [
-      { date: "2026-01-01", event: "Began exploring her second act after stepping back from CEO role", category: "career" },
+      { date: "2026-03-01", event: "Started second round of IVF", category: "health" },
+      { date: "2025-12-20", event: "Her mom visited from Mumbai for a month — really lifted her spirits", category: "family" },
+    ],
+    color: "#c4956a"
+  },
+  {
+    id: 4, name: "Becca Lawson", initials: "BL", tier: "close", cadenceDays: 7,
+    birthday: "1988-11-30", lastContact: "2026-04-18", preferredChannel: "text",
+    notes: "Stay-at-home mom turned entrepreneur. Launched a candle business from her kitchen that's actually taking off. Wildly creative, obsessively organized, and has the best meme game of anyone you know.",
+    address: "502 Clover Hill Rd\nNashville, TN 37205", favoriteRestaurant: "Hattie B's", goToGesture: "Send her a meme — she will lose it. Or a Diet Coke.",
+    guiltyPleasure: "True crime podcasts at 2am (her husband does not understand this)", favoriteBeverage: "Diet Coke — borderline religious about it", favoriteSnack: "Goldfish crackers by the handful",
+    currentHardThing: "",
+    howToSupport: "Hype her up — she second-guesses herself more than she lets on. She needs cheerleaders, not advisors.",
+    whatMakesThemLaugh: "Her kids' chaos. Parenting memes. Anything that captures the absurdity of being a mom.",
+    currentlyInto: "Her candle launch — working on getting into two local boutiques.",
+    faith: "Non-denominational Christian", prayerRequests: "The candle business finding its footing. Her husband Jake's job search — he's been looking for 4 months.",
+    loveLanguages: ["words", "gifts"],
+    significantOther: { name: "Jake", birthday: "1986-08-19" },
+    kids: [{ name: "Willa", birthday: "2018-05-14" }, { name: "Henry", birthday: "2021-02-03" }],
+    pets: [{ name: "Moose", type: "Golden retriever" }],
+    lifeEvents: [
+      { date: "2026-04-01", event: "Launched her candle business — Hearthside Co.", category: "career" },
+      { date: "2026-01-20", event: "Jake started a job search after his company downsized", category: "family" },
     ],
     color: "#6aab8a"
   },
@@ -89,7 +128,9 @@ function blankContact(id) {
     id: id, name: "", initials: "", tier: "friend", cadenceDays: 14,
     birthday: null, lastContact: new Date().toISOString().split("T")[0],
     preferredChannel: "text", notes: "", address: "", favoriteRestaurant: "",
-    goToGesture: "", loveLanguages: [],
+    goToGesture: "", guiltyPleasure: "", favoriteBeverage: "", favoriteSnack: "",
+    currentHardThing: "", howToSupport: "", whatMakesThemLaugh: "", currentlyInto: "",
+    faith: "", prayerRequests: "", pets: [], loveLanguages: [],
     significantOther: { name: "", birthday: "" }, kids: [], lifeEvents: [],
     color: CONTACT_COLORS[Math.floor(Math.random() * CONTACT_COLORS.length)]
   };
@@ -191,371 +232,6 @@ function Tag(props) {
   );
 }
 
-// ─── TodayView ────────────────────────────────────────────────────────────────
-function TodayView({ contacts, upcoming, nudges, setDraftTarget, setDraftContext }) {
-  return (
-    <div>
-      <div style={{ fontSize: 28, fontWeight: 400, marginBottom: 4 }}>Good morning. 🌸</div>
-      <div style={{ fontSize: 15, color: T.textLight, marginBottom: 28 }}>{new Date().toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" })} · Here's who needs your attention</div>
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18 }}>
-        <div style={card}>
-          <div style={{ fontSize: 11, letterSpacing: "0.1em", textTransform: "uppercase", color: T.textLight, marginBottom: 16 }}>🗓 Upcoming Dates</div>
-          {upcoming.length === 0 && <div style={{ color: T.textLight, fontSize: 15 }}>Nothing in the next 60 days</div>}
-          {upcoming.map(function(u, i) {
-            return (
-              <div key={i} style={eventRow}>
-                <Avatar color={u.contact.color} initials={u.contact.initials} size={32} />
-                <div style={{ flex: 1 }}>
-                  <div style={{ fontSize: 15 }}>{u.label}</div>
-                  <div style={{ fontSize: 13, color: T.textLight }}>{u.days === 0 ? "Today!" : "in " + u.days + " days"}</div>
-                </div>
-                <button style={btn("secondary")} onClick={function() { setDraftTarget(u.contact); setDraftContext(u.label + (u.days === 0 ? " is today!" : " is in " + u.days + " days")); }}>Draft</button>
-              </div>
-            );
-          })}
-        </div>
-
-        <div style={card}>
-          <div style={{ fontSize: 11, letterSpacing: "0.1em", textTransform: "uppercase", color: T.textLight, marginBottom: 16 }}>💛 Check-in Nudges</div>
-          {nudges.length === 0 && <div style={{ color: T.textLight, fontSize: 15 }}>You're all caught up!</div>}
-          {nudges.map(function(c) {
-            var days = daysSince(c.lastContact);
-            var urgency = getNudgeUrgency(c);
-            var cadenceLabel = (CADENCE_OPTIONS.find(function(o) { return o.value === c.cadenceDays; }) || {}).label || "Custom";
-            return (
-              <div key={c.id} style={eventRow}>
-                <div style={{ width: 8, height: 8, borderRadius: "50%", flexShrink: 0, background: urgency === "overdue" ? T.danger : T.warning }} />
-                <Avatar color={c.color} initials={c.initials} size={32} />
-                <div style={{ flex: 1 }}>
-                  <div style={{ fontSize: 15 }}>{c.name}</div>
-                  <div style={{ fontSize: 13, color: T.textLight }}>{days}d ago · {cadenceLabel.toLowerCase()}</div>
-                </div>
-                <button style={btn("secondary")} onClick={function() { setDraftTarget(c); setDraftContext(""); }}>Reach out</button>
-              </div>
-            );
-          })}
-        </div>
-
-        <div style={Object.assign({}, card, { gridColumn: "1 / -1" })}>
-          <div style={{ fontSize: 11, letterSpacing: "0.1em", textTransform: "uppercase", color: T.textLight, marginBottom: 16 }}>🌸 What's happening in your circle</div>
-          {contacts.every(function(c) { return c.lifeEvents.length === 0; }) && (
-            <div style={{ color: T.textLight, fontSize: 15 }}>Add life events to contacts to see them here.</div>
-          )}
-          {contacts.flatMap(function(c) { return c.lifeEvents.slice(0, 1).map(function(e) { return Object.assign({}, e, { contact: c }); }); })
-            .sort(function(a, b) { return new Date(b.date) - new Date(a.date); })
-            .slice(0, 6)
-            .map(function(e, i) {
-              return (
-                <div key={i} style={eventRow}>
-                  <Avatar color={e.contact.color} initials={e.contact.initials} size={32} />
-                  <div style={{ flex: 1 }}>
-                    <span style={{ fontSize: 15 }}>{e.contact.name}</span>
-                    <span style={{ fontSize: 15, color: T.textMid }}> — {e.event}</span>
-                  </div>
-                  <button style={btn("secondary")} onClick={function() { setDraftTarget(e.contact); setDraftContext(e.event); }}>Draft</button>
-                </div>
-              );
-            })}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// ─── ContactProfile ───────────────────────────────────────────────────────────
-function ContactProfile({ contact, setSelectedContact, openEdit, setLogContact, setDraftTarget, setDraftContext, setConfirmDelete, setAddingEvent }) {
-  var urgency = getNudgeUrgency(contact);
-  var days = daysSince(contact.lastContact);
-  var bday = nextOccurrence(contact.birthday);
-  var bdayDays = bday ? daysBetween(new Date(), bday) : null;
-  var hasHardThing = contact.lifeEvents.some(function(e) { return e.category === "health" || (e.category === "family" && e.event.toLowerCase().includes("diagnos")); });
-  var cadenceLabel = (CADENCE_OPTIONS.find(function(o) { return o.value === contact.cadenceDays; }) || {}).label || "Custom";
-  var loveLangs = (contact.loveLanguages || []).map(function(k) { return LOVE_LANGUAGES.find(function(l) { return l.key === k; }); }).filter(Boolean);
-
-  return (
-    <div>
-      <button style={btn("sm")} onClick={function() { setSelectedContact(null); }}>← Back</button>
-      <div style={{ height: 20 }} />
-
-      {hasHardThing && (
-        <div style={{ background: "#fdf0f5", border: "1px solid #e8a0b044", borderRadius: 10, padding: "12px 16px", fontSize: 14, color: "#8a4060", lineHeight: 1.6, marginBottom: 16 }}>
-          💙 {contact.name} is going through something difficult. A simple, genuine message goes a long way.
-        </div>
-      )}
-
-      <div style={{ display: "flex", alignItems: "flex-start", gap: 18, marginBottom: 24, flexWrap: "wrap" }}>
-        <Avatar color={contact.color} initials={contact.initials} size={62} />
-        <div style={{ flex: 1 }}>
-          <div style={{ fontSize: 26, fontWeight: 400, marginBottom: 4 }}>{contact.name}</div>
-          <div style={{ fontSize: 15, color: T.textMid, marginBottom: 10 }}>{tierLabels[contact.tier]} · {channelIcons[contact.preferredChannel]} {contact.preferredChannel} · {cadenceLabel.toLowerCase()}</div>
-          <div>
-            {urgency !== "ok" && <Tag color={urgency === "overdue" ? T.danger : T.warning}>{days}d since contact</Tag>}
-            {bdayDays !== null && bdayDays <= 60 && <Tag color={T.warm}>🎂 Birthday in {bdayDays}d</Tag>}
-            {loveLangs.map(function(l) { return <Tag key={l.key} color={T.accent}>{l.icon} {l.label}</Tag>; })}
-          </div>
-        </div>
-        <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-          <button style={btn("ghost")} onClick={function() { openEdit(contact); }}>Edit</button>
-          <button style={btn("ghost")} onClick={function() { setLogContact(contact); }}>Log contact</button>
-          <button style={btn()} onClick={function() { setDraftTarget(contact); setDraftContext(""); }}>Draft message</button>
-          <button style={btn("danger")} onClick={function() { setConfirmDelete(contact); }}>Remove</button>
-        </div>
-      </div>
-
-      {contact.notes && (
-        <div style={{ marginBottom: 24 }}>
-          <div style={sectionTitle}>About</div>
-          <div style={{ fontSize: 16, lineHeight: 1.7, color: T.textMid }}>{contact.notes}</div>
-        </div>
-      )}
-
-      <div style={{ marginBottom: 24 }}>
-        <div style={sectionTitle}>How to care well</div>
-        <div style={row2}>
-          {contact.address && (
-            <div style={infoBox}>
-              <div style={{ fontSize: 11, color: T.textLight, marginBottom: 4 }}>📬 MAILING ADDRESS</div>
-              <div style={{ whiteSpace: "pre-line" }}>{contact.address}</div>
-            </div>
-          )}
-          {contact.favoriteRestaurant && (
-            <div style={infoBox}>
-              <div style={{ fontSize: 11, color: T.textLight, marginBottom: 4 }}>🍜 FAVORITE RESTAURANT</div>
-              {contact.favoriteRestaurant}
-            </div>
-          )}
-          {contact.goToGesture && (
-            <div style={infoBox}>
-              <div style={{ fontSize: 11, color: T.textLight, marginBottom: 4 }}>💝 GO-TO GESTURE</div>
-              {contact.goToGesture}
-            </div>
-          )}
-          {!contact.address && !contact.favoriteRestaurant && !contact.goToGesture && (
-            <div style={{ color: T.textLight, fontSize: 15 }}>
-              No care details yet. <button style={{ background: "none", border: "none", color: T.accent, cursor: "pointer", fontFamily: "inherit", fontSize: 15, padding: 0 }} onClick={function() { openEdit(contact); }}>Add them →</button>
-            </div>
-          )}
-        </div>
-      </div>
-
-      {(contact.significantOther && contact.significantOther.name || (contact.kids || []).some(function(k) { return k.name; })) && (
-        <div style={{ marginBottom: 24 }}>
-          <div style={sectionTitle}>Their world</div>
-          <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-            {contact.significantOther && contact.significantOther.name && (
-              <div style={infoBox}>
-                <div style={{ fontSize: 11, color: T.textLight, marginBottom: 4 }}>❤️ PARTNER</div>
-                <div>{contact.significantOther.name}</div>
-                {contact.significantOther.birthday && <div style={{ fontSize: 13, color: T.textLight, marginTop: 2 }}>🎂 {new Date(contact.significantOther.birthday).toLocaleDateString("en-US", { month: "long", day: "numeric" })}</div>}
-              </div>
-            )}
-            {(contact.kids || []).map(function(k, i) {
-              return k.name ? (
-                <div key={i} style={infoBox}>
-                  <div style={{ fontSize: 11, color: T.textLight, marginBottom: 4 }}>👧 KID</div>
-                  <div>{k.name}</div>
-                  {k.birthday && <div style={{ fontSize: 13, color: T.textLight, marginTop: 2 }}>🎂 {new Date(k.birthday).toLocaleDateString("en-US", { month: "long", day: "numeric" })}</div>}
-                </div>
-              ) : null;
-            })}
-          </div>
-        </div>
-      )}
-
-      <div style={{ marginBottom: 24 }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <div style={sectionTitle}>Life Events</div>
-          <button style={btn("sm")} onClick={function() { setAddingEvent(true); }}>+ Add</button>
-        </div>
-        {contact.lifeEvents.length === 0 && <div style={{ color: T.textLight, fontSize: 15 }}>No life events logged yet.</div>}
-        {contact.lifeEvents.map(function(e, i) {
-          return (
-            <div key={i} style={{ display: "flex", gap: 12, marginBottom: 12, alignItems: "flex-start" }}>
-              <div style={{ width: 28, height: 28, borderRadius: "50%", flexShrink: 0, background: (categoryColors[e.category] || T.accent) + "22", border: "1px solid " + (categoryColors[e.category] || T.accent) + "44", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 13 }}>{categoryIcons[e.category]}</div>
-              <div>
-                <div style={{ fontSize: 15 }}>{e.event}</div>
-                <div style={{ fontSize: 13, color: T.textLight, marginTop: 2 }}>{new Date(e.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}</div>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-
-      {contact.birthday && (
-        <div style={{ marginBottom: 24 }}>
-          <div style={sectionTitle}>Key Dates</div>
-          <div style={Object.assign({}, infoBox, { display: "inline-block" })}>
-            <div style={{ fontSize: 11, color: T.textLight, marginBottom: 3 }}>BIRTHDAY</div>
-            <div style={{ fontSize: 16 }}>{new Date(contact.birthday).toLocaleDateString("en-US", { month: "long", day: "numeric" })}</div>
-            {bdayDays !== null && <div style={{ fontSize: 13, color: T.accent, marginTop: 2 }}>{bdayDays === 0 ? "Today! 🎂" : "in " + bdayDays + " days"}</div>}
-          </div>
-        </div>
-      )}
-    </div>
-  );
-}
-
-// ─── ContactsView ─────────────────────────────────────────────────────────────
-function ContactsView({ contacts, setSelectedContact, setView, openAdd }) {
-  return (
-    <div>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 4 }}>
-        <div style={{ fontSize: 28, fontWeight: 400 }}>Your Circle 💜</div>
-        <button style={btn()} onClick={openAdd}>+ Add Person</button>
-      </div>
-      <div style={{ fontSize: 15, color: T.textLight, marginBottom: 28 }}>{contacts.length} {contacts.length === 1 ? "person" : "people"} · all close to your heart</div>
-      {contacts.length === 0 && (
-        <div style={Object.assign({}, card, { textAlign: "center", padding: 40 })}>
-          <div style={{ fontSize: 40, marginBottom: 12 }}>💜</div>
-          <div style={{ fontSize: 18, marginBottom: 8 }}>Your circle is empty</div>
-          <div style={{ color: T.textLight, marginBottom: 20 }}>Add the people who matter most to you.</div>
-          <button style={btn()} onClick={openAdd}>+ Add your first person</button>
-        </div>
-      )}
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(230px, 1fr))", gap: 16 }}>
-        {contacts.map(function(c) {
-          var urgency = getNudgeUrgency(c);
-          var days = daysSince(c.lastContact);
-          var hasHardThing = c.lifeEvents.some(function(e) { return e.category === "health" || (e.category === "family" && e.event.toLowerCase().includes("diagnos")); });
-          var cadenceLabel = (CADENCE_OPTIONS.find(function(o) { return o.value === c.cadenceDays; }) || {}).label || "Custom";
-          var loveLangs = (c.loveLanguages || []).map(function(k) { return LOVE_LANGUAGES.find(function(l) { return l.key === k; }); }).filter(Boolean);
-          return (
-            <div key={c.id} style={Object.assign({}, card, { cursor: "pointer" })} onClick={function() { setSelectedContact(c); setView("profile"); }}>
-              <div style={{ display: "flex", gap: 12, alignItems: "center", marginBottom: 12 }}>
-                <Avatar color={c.color} initials={c.initials} size={42} />
-                <div>
-                  <div style={{ fontSize: 16 }}>{c.name}</div>
-                  <div style={{ fontSize: 13, color: T.textLight }}>{tierLabels[c.tier]} · {cadenceLabel.toLowerCase()}</div>
-                </div>
-              </div>
-              {c.notes && <div style={{ fontSize: 14, color: T.textMid, lineHeight: 1.6, marginBottom: 10 }}>{c.notes.slice(0, 85)}{c.notes.length > 85 ? "…" : ""}</div>}
-              {loveLangs.length > 0 && <div style={{ marginBottom: 8 }}>{loveLangs.map(function(l) { return <span key={l.key} style={{ fontSize: 12, color: T.accent, marginRight: 6 }}>{l.icon} {l.label}</span>; })}</div>}
-              {hasHardThing && <div style={{ fontSize: 13, color: T.danger }}>💙 Going through something hard</div>}
-              {urgency !== "ok" && !hasHardThing && <div style={{ fontSize: 13, color: urgency === "overdue" ? T.danger : T.warning }}>{urgency === "overdue" ? "⚠ " : "• "}{days}d since last contact</div>}
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  );
-}
-
-// ─── EditModal ────────────────────────────────────────────────────────────────
-function EditModal({ editingContact, isNew, setEditingContact, updateEdit, updateEditNested, toggleLL, addKid, updateKid, removeKid, saveEdit }) {
-  if (!editingContact) return null;
-  return (
-    <div style={modalOverlay} onClick={function() { setEditingContact(null); }}>
-      <div style={modalBox} onClick={function(e) { e.stopPropagation(); }}>
-        <div style={{ fontSize: 20, marginBottom: 20 }}>{isNew ? "Add New Person" : "Edit — " + editingContact.name}</div>
-
-        <div style={Object.assign({}, row2, { marginBottom: 16 })}>
-          <div>
-            <div style={fieldLabel}>Name *</div>
-            <input style={inputStyle} value={editingContact.name} onChange={function(e) { updateEdit("name", e.target.value); }} placeholder="Full name" />
-          </div>
-          <div>
-            <div style={fieldLabel}>Relationship</div>
-            <select style={selectStyle} value={editingContact.tier} onChange={function(e) { updateEdit("tier", e.target.value); }}>
-              <option value="close">Close Friend</option>
-              <option value="friend">Friend</option>
-              <option value="acquaintance">Acquaintance</option>
-            </select>
-          </div>
-        </div>
-
-        <div style={Object.assign({}, row2, { marginBottom: 16 })}>
-          <div>
-            <div style={fieldLabel}>Preferred Channel</div>
-            <select style={selectStyle} value={editingContact.preferredChannel} onChange={function(e) { updateEdit("preferredChannel", e.target.value); }}>
-              <option value="text">💬 Text</option>
-              <option value="call">📞 Call</option>
-              <option value="email">✉️ Email</option>
-            </select>
-          </div>
-          <div>
-            <div style={fieldLabel}>Check-in Cadence</div>
-            <select style={selectStyle} value={editingContact.cadenceDays} onChange={function(e) { updateEdit("cadenceDays", Number(e.target.value)); }}>
-              {CADENCE_OPTIONS.map(function(o) { return <option key={o.value} value={o.value}>{o.label}</option>; })}
-            </select>
-          </div>
-        </div>
-
-        <div style={{ marginBottom: 16 }}>
-          <div style={fieldLabel}>Birthday</div>
-          <input style={inputStyle} type="date" value={editingContact.birthday || ""} onChange={function(e) { updateEdit("birthday", e.target.value || null); }} />
-        </div>
-
-        <div style={{ marginBottom: 16 }}>
-          <div style={fieldLabel}>Notes — who are they?</div>
-          <textarea style={textareaStyle} value={editingContact.notes} onChange={function(e) { updateEdit("notes", e.target.value); }} placeholder="Hobbies, interests, personality, what makes them them…" />
-        </div>
-
-        <div style={{ marginBottom: 16 }}>
-          <div style={fieldLabel}>Love Language(s)</div>
-          <div style={{ display: "flex", flexWrap: "wrap" }}>
-            {LOVE_LANGUAGES.map(function(l) {
-              var active = (editingContact.loveLanguages || []).includes(l.key);
-              return (
-                <div key={l.key} onClick={function() { toggleLL(l.key); }} style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "7px 14px", borderRadius: 20, fontSize: 14, cursor: "pointer", border: "1px solid " + (active ? T.accent : T.border), background: active ? T.accentLight : T.bg, color: active ? T.accent : T.textMid, marginRight: 8, marginBottom: 8, userSelect: "none" }}>
-                  {l.icon} {l.label}
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-        <div style={{ marginBottom: 16 }}>
-          <div style={fieldLabel}>Mailing Address</div>
-          <textarea style={Object.assign({}, textareaStyle, { minHeight: 55 })} value={editingContact.address} onChange={function(e) { updateEdit("address", e.target.value); }} placeholder="Street, City, State ZIP" />
-        </div>
-
-        <div style={Object.assign({}, row2, { marginBottom: 16 })}>
-          <div>
-            <div style={fieldLabel}>Favorite Restaurant</div>
-            <input style={inputStyle} value={editingContact.favoriteRestaurant} onChange={function(e) { updateEdit("favoriteRestaurant", e.target.value); }} placeholder="For DoorDash or a visit" />
-          </div>
-          <div>
-            <div style={fieldLabel}>Go-to Gesture</div>
-            <input style={inputStyle} value={editingContact.goToGesture} onChange={function(e) { updateEdit("goToGesture", e.target.value); }} placeholder="What they love receiving" />
-          </div>
-        </div>
-
-        <div style={{ borderTop: "1px solid " + T.border, paddingTop: 16, marginBottom: 16 }}>
-          <div style={fieldLabel}>Partner</div>
-          <div style={row2}>
-            <input style={inputStyle} value={(editingContact.significantOther && editingContact.significantOther.name) || ""} onChange={function(e) { updateEditNested("significantOther", "name", e.target.value); }} placeholder="Name" />
-            <input style={inputStyle} type="date" value={(editingContact.significantOther && editingContact.significantOther.birthday) || ""} onChange={function(e) { updateEditNested("significantOther", "birthday", e.target.value); }} />
-          </div>
-        </div>
-
-        <div style={{ borderTop: "1px solid " + T.border, paddingTop: 16, marginBottom: 20 }}>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
-            <div style={fieldLabel}>Kids</div>
-            <button style={btn("sm")} onClick={addKid}>+ Add kid</button>
-          </div>
-          {(editingContact.kids || []).map(function(k, i) {
-            return (
-              <div key={i} style={Object.assign({}, row2, { marginBottom: 8 })}>
-                <input style={inputStyle} value={k.name} onChange={function(e) { updateKid(i, "name", e.target.value); }} placeholder="Name" />
-                <div style={{ display: "flex", gap: 6 }}>
-                  <input style={Object.assign({}, inputStyle, { flex: 1 })} type="date" value={k.birthday} onChange={function(e) { updateKid(i, "birthday", e.target.value); }} />
-                  <button style={Object.assign({}, btn("ghost"), { padding: "8px 11px" })} onClick={function() { removeKid(i); }}>×</button>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
-        <div style={{ display: "flex", gap: 10 }}>
-          <button style={btn()} onClick={saveEdit}>{isNew ? "Add to Circle" : "Save"}</button>
-          <button style={btn("ghost")} onClick={function() { setEditingContact(null); }}>Cancel</button>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// ─── Main App ─────────────────────────────────────────────────────────────────
 export default function CircleKeeper() {
   var [contacts, setContacts] = useState(loadContacts);
   var [view, setView] = useState("today");
@@ -651,6 +327,26 @@ export default function CircleKeeper() {
   function removeKid(i) {
     setEditingContact(function(prev) {
       return Object.assign({}, prev, { kids: prev.kids.filter(function(_, idx) { return idx !== i; }) });
+    });
+  }
+
+  function addPet() {
+    setEditingContact(function(prev) {
+      return Object.assign({}, prev, { pets: (prev.pets || []).concat([{ name: "", type: "" }]) });
+    });
+  }
+
+  function updatePet(i, field, value) {
+    setEditingContact(function(prev) {
+      var pets = prev.pets.slice();
+      pets[i] = Object.assign({}, pets[i], { [field]: value });
+      return Object.assign({}, prev, { pets: pets });
+    });
+  }
+
+  function removePet(i) {
+    setEditingContact(function(prev) {
+      return Object.assign({}, prev, { pets: prev.pets.filter(function(_, idx) { return idx !== i; }) });
     });
   }
 
@@ -763,6 +459,506 @@ export default function CircleKeeper() {
   var upcoming = getUpcomingDates(contacts);
   var nudges = contacts.filter(function(c) { return getNudgeUrgency(c) !== "ok"; });
 
+  function TodayView() {
+    return (
+      <div>
+        <div style={{ fontSize: 28, fontWeight: 400, marginBottom: 4 }}>Good morning. 🌸</div>
+        <div style={{ fontSize: 15, color: T.textLight, marginBottom: 28 }}>{new Date().toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" })} · Here's who needs your attention</div>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18 }}>
+          <div style={card}>
+            <div style={{ fontSize: 11, letterSpacing: "0.1em", textTransform: "uppercase", color: T.textLight, marginBottom: 16 }}>🗓 Upcoming Dates</div>
+            {upcoming.length === 0 && <div style={{ color: T.textLight, fontSize: 15 }}>Nothing in the next 60 days</div>}
+            {upcoming.map(function(u, i) {
+              return (
+                <div key={i} style={eventRow}>
+                  <Avatar color={u.contact.color} initials={u.contact.initials} size={32} />
+                  <div style={{ flex: 1 }}>
+                    <div style={{ fontSize: 15 }}>{u.label}</div>
+                    <div style={{ fontSize: 13, color: T.textLight }}>{u.days === 0 ? "Today!" : "in " + u.days + " days"}</div>
+                  </div>
+                  <button style={btn("secondary")} onClick={function() { setDraftTarget(u.contact); setDraftContext(u.label + (u.days === 0 ? " is today!" : " is in " + u.days + " days")); }}>Draft</button>
+                </div>
+              );
+            })}
+          </div>
+
+          <div style={card}>
+            <div style={{ fontSize: 11, letterSpacing: "0.1em", textTransform: "uppercase", color: T.textLight, marginBottom: 16 }}>💛 Check-in Nudges</div>
+            {nudges.length === 0 && <div style={{ color: T.textLight, fontSize: 15 }}>You're all caught up!</div>}
+            {nudges.map(function(c) {
+              var days = daysSince(c.lastContact);
+              var urgency = getNudgeUrgency(c);
+              var cadenceLabel = (CADENCE_OPTIONS.find(function(o) { return o.value === c.cadenceDays; }) || {}).label || "Custom";
+              return (
+                <div key={c.id} style={eventRow}>
+                  <div style={{ width: 8, height: 8, borderRadius: "50%", flexShrink: 0, background: urgency === "overdue" ? T.danger : T.warning }} />
+                  <Avatar color={c.color} initials={c.initials} size={32} />
+                  <div style={{ flex: 1 }}>
+                    <div style={{ fontSize: 15 }}>{c.name}</div>
+                    <div style={{ fontSize: 13, color: T.textLight }}>{days}d ago · {cadenceLabel.toLowerCase()}</div>
+                  </div>
+                  <button style={btn("secondary")} onClick={function() { setDraftTarget(c); setDraftContext(""); }}>Reach out</button>
+                </div>
+              );
+            })}
+          </div>
+
+          <div style={Object.assign({}, card, { gridColumn: "1 / -1" })}>
+            <div style={{ fontSize: 11, letterSpacing: "0.1em", textTransform: "uppercase", color: T.textLight, marginBottom: 16 }}>🌸 What's happening in your circle</div>
+            {contacts.every(function(c) { return c.lifeEvents.length === 0; }) && (
+              <div style={{ color: T.textLight, fontSize: 15 }}>Add life events to contacts to see them here.</div>
+            )}
+            {contacts.flatMap(function(c) { return c.lifeEvents.slice(0, 1).map(function(e) { return Object.assign({}, e, { contact: c }); }); })
+              .sort(function(a, b) { return new Date(b.date) - new Date(a.date); })
+              .slice(0, 6)
+              .map(function(e, i) {
+                return (
+                  <div key={i} style={eventRow}>
+                    <Avatar color={e.contact.color} initials={e.contact.initials} size={32} />
+                    <div style={{ flex: 1 }}>
+                      <span style={{ fontSize: 15 }}>{e.contact.name}</span>
+                      <span style={{ fontSize: 15, color: T.textMid }}> — {e.event}</span>
+                    </div>
+                    <button style={btn("secondary")} onClick={function() { setDraftTarget(e.contact); setDraftContext(e.event); }}>Draft</button>
+                  </div>
+                );
+              })}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  function ContactProfile(props) {
+    var contact = props.contact;
+    var urgency = getNudgeUrgency(contact);
+    var days = daysSince(contact.lastContact);
+    var bday = nextOccurrence(contact.birthday);
+    var bdayDays = bday ? daysBetween(new Date(), bday) : null;
+    var hasHardThing = contact.lifeEvents.some(function(e) { return e.category === "health" || (e.category === "family" && e.event.toLowerCase().includes("diagnos")); });
+    var cadenceLabel = (CADENCE_OPTIONS.find(function(o) { return o.value === contact.cadenceDays; }) || {}).label || "Custom";
+    var loveLangs = (contact.loveLanguages || []).map(function(k) { return LOVE_LANGUAGES.find(function(l) { return l.key === k; }); }).filter(Boolean);
+
+    return (
+      <div>
+        <button style={btn("sm")} onClick={function() { setSelectedContact(null); }}>← Back</button>
+        <div style={{ height: 20 }} />
+
+        {hasHardThing && (
+          <div style={{ background: "#fdf0f5", border: "1px solid #e8a0b044", borderRadius: 10, padding: "12px 16px", fontSize: 14, color: "#8a4060", lineHeight: 1.6, marginBottom: 16 }}>
+            💙 {contact.name} is going through something difficult. A simple, genuine message goes a long way.
+          </div>
+        )}
+
+        <div style={{ display: "flex", alignItems: "flex-start", gap: 18, marginBottom: 24, flexWrap: "wrap" }}>
+          <Avatar color={contact.color} initials={contact.initials} size={62} />
+          <div style={{ flex: 1 }}>
+            <div style={{ fontSize: 26, fontWeight: 400, marginBottom: 4 }}>{contact.name}</div>
+            <div style={{ fontSize: 15, color: T.textMid, marginBottom: 10 }}>{tierLabels[contact.tier]} · {channelIcons[contact.preferredChannel]} {contact.preferredChannel} · {cadenceLabel.toLowerCase()}</div>
+            <div>
+              {urgency !== "ok" && <Tag color={urgency === "overdue" ? T.danger : T.warning}>{days}d since contact</Tag>}
+              {bdayDays !== null && bdayDays <= 60 && <Tag color={T.warm}>🎂 Birthday in {bdayDays}d</Tag>}
+              {loveLangs.map(function(l) { return <Tag key={l.key} color={T.accent}>{l.icon} {l.label}</Tag>; })}
+            </div>
+          </div>
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+            <button style={btn("ghost")} onClick={function() { openEdit(contact); }}>Edit</button>
+            <button style={btn("ghost")} onClick={function() { setLogContact(contact); }}>Log contact</button>
+            <button style={btn()} onClick={function() { setDraftTarget(contact); setDraftContext(""); }}>Draft message</button>
+            <button style={btn("danger")} onClick={function() { setConfirmDelete(contact); }}>Remove</button>
+          </div>
+        </div>
+
+        {contact.notes && (
+          <div style={{ marginBottom: 24 }}>
+            <div style={sectionTitle}>About</div>
+            <div style={{ fontSize: 16, lineHeight: 1.7, color: T.textMid }}>{contact.notes}</div>
+          </div>
+        )}
+
+        {contact.whatMakesThemLaugh && (
+          <div style={{ marginBottom: 24 }}>
+            <div style={sectionTitle}>😄 What makes them laugh</div>
+            <div style={{ fontSize: 15, lineHeight: 1.7, color: T.textMid }}>{contact.whatMakesThemLaugh}</div>
+          </div>
+        )}
+
+        {contact.currentHardThing && (
+          <div style={{ marginBottom: 24 }}>
+            <div style={sectionTitle}>💙 What they're carrying right now</div>
+            <div style={{ background: "#fdf0f5", border: "1px solid #e8a0b044", borderRadius: 10, padding: "14px 16px", fontSize: 15, color: "#8a4060", lineHeight: 1.7 }}>
+              {contact.currentHardThing}
+            </div>
+          </div>
+        )}
+
+        {contact.howToSupport && (
+          <div style={{ marginBottom: 24 }}>
+            <div style={sectionTitle}>🤲 How they like to be supported</div>
+            <div style={{ background: T.accentLight, border: "1px solid " + T.accentMid, borderRadius: 10, padding: "14px 16px", fontSize: 15, color: T.textMid, lineHeight: 1.7 }}>
+              {contact.howToSupport}
+            </div>
+          </div>
+        )}
+
+        {(contact.faith || contact.prayerRequests) && (
+          <div style={{ marginBottom: 24 }}>
+            <div style={sectionTitle}>🙏 Faith & Prayer</div>
+            {contact.faith && (
+              <div style={{ fontSize: 13, color: T.textLight, marginBottom: contact.prayerRequests ? 10 : 0 }}>
+                <span style={{ textTransform: "uppercase", letterSpacing: "0.08em" }}>Tradition — </span>{contact.faith}
+              </div>
+            )}
+            {contact.prayerRequests && (
+              <div style={{ background: "#fdf8ed", border: "1px solid #e8d8a044", borderRadius: 10, padding: "14px 16px", fontSize: 15, color: "#7a6030", lineHeight: 1.7 }}>
+                {contact.prayerRequests}
+              </div>
+            )}
+          </div>
+        )}
+
+        <div style={{ marginBottom: 24 }}>
+          <div style={sectionTitle}>How to care well</div>
+          <div style={row2}>
+            {contact.address && (
+              <div style={infoBox}>
+                <div style={{ fontSize: 11, color: T.textLight, marginBottom: 4 }}>📬 MAILING ADDRESS</div>
+                <div style={{ whiteSpace: "pre-line" }}>{contact.address}</div>
+              </div>
+            )}
+            {contact.favoriteRestaurant && (
+              <div style={infoBox}>
+                <div style={{ fontSize: 11, color: T.textLight, marginBottom: 4 }}>🍜 FAVORITE RESTAURANT</div>
+                {contact.favoriteRestaurant}
+              </div>
+            )}
+            {contact.goToGesture && (
+              <div style={infoBox}>
+                <div style={{ fontSize: 11, color: T.textLight, marginBottom: 4 }}>💝 GO-TO GESTURE</div>
+                {contact.goToGesture}
+              </div>
+            )}
+            {contact.favoriteBeverage && (
+              <div style={infoBox}>
+                <div style={{ fontSize: 11, color: T.textLight, marginBottom: 4 }}>☕ FAVORITE BEVERAGE</div>
+                {contact.favoriteBeverage}
+              </div>
+            )}
+            {contact.favoriteSnack && (
+              <div style={infoBox}>
+                <div style={{ fontSize: 11, color: T.textLight, marginBottom: 4 }}>🍿 FAVORITE SNACK</div>
+                {contact.favoriteSnack}
+              </div>
+            )}
+            {contact.guiltyPleasure && (
+              <div style={infoBox}>
+                <div style={{ fontSize: 11, color: T.textLight, marginBottom: 4 }}>🙈 GUILTY PLEASURE</div>
+                {contact.guiltyPleasure}
+              </div>
+            )}
+            {contact.currentlyInto && (
+              <div style={infoBox}>
+                <div style={{ fontSize: 11, color: T.textLight, marginBottom: 4 }}>✨ CURRENTLY INTO</div>
+                {contact.currentlyInto}
+              </div>
+            )}
+            {!contact.address && !contact.favoriteRestaurant && !contact.goToGesture && !contact.favoriteBeverage && !contact.favoriteSnack && !contact.guiltyPleasure && !contact.currentlyInto && (
+              <div style={{ color: T.textLight, fontSize: 15 }}>
+                No care details yet. <button style={{ background: "none", border: "none", color: T.accent, cursor: "pointer", fontFamily: "inherit", fontSize: 15, padding: 0 }} onClick={function() { openEdit(contact); }}>Add them →</button>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {(contact.significantOther && contact.significantOther.name || (contact.kids || []).some(function(k) { return k.name; }) || (contact.pets || []).some(function(p) { return p.name; })) && (
+          <div style={{ marginBottom: 24 }}>
+            <div style={sectionTitle}>Their world</div>
+            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+              {contact.significantOther && contact.significantOther.name && (
+                <div style={infoBox}>
+                  <div style={{ fontSize: 11, color: T.textLight, marginBottom: 4 }}>❤️ PARTNER</div>
+                  <div>{contact.significantOther.name}</div>
+                  {contact.significantOther.birthday && <div style={{ fontSize: 13, color: T.textLight, marginTop: 2 }}>🎂 {new Date(contact.significantOther.birthday).toLocaleDateString("en-US", { month: "long", day: "numeric" })}</div>}
+                </div>
+              )}
+              {(contact.kids || []).map(function(k, i) {
+                return k.name ? (
+                  <div key={i} style={infoBox}>
+                    <div style={{ fontSize: 11, color: T.textLight, marginBottom: 4 }}>👧 KID</div>
+                    <div>{k.name}</div>
+                    {k.birthday && <div style={{ fontSize: 13, color: T.textLight, marginTop: 2 }}>🎂 {new Date(k.birthday).toLocaleDateString("en-US", { month: "long", day: "numeric" })}</div>}
+                  </div>
+                ) : null;
+              })}
+              {(contact.pets || []).map(function(p, i) {
+                return p.name ? (
+                  <div key={i} style={infoBox}>
+                    <div style={{ fontSize: 11, color: T.textLight, marginBottom: 4 }}>🐾 PET</div>
+                    <div>{p.name}</div>
+                    {p.type && <div style={{ fontSize: 13, color: T.textLight, marginTop: 2 }}>{p.type}</div>}
+                  </div>
+                ) : null;
+              })}
+            </div>
+          </div>
+        )}
+
+        <div style={{ marginBottom: 24 }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <div style={sectionTitle}>Life Events</div>
+            <button style={btn("sm")} onClick={function() { setAddingEvent(true); }}>+ Add</button>
+          </div>
+          {contact.lifeEvents.length === 0 && <div style={{ color: T.textLight, fontSize: 15 }}>No life events logged yet.</div>}
+          {contact.lifeEvents.map(function(e, i) {
+            return (
+              <div key={i} style={{ display: "flex", gap: 12, marginBottom: 12, alignItems: "flex-start" }}>
+                <div style={{ width: 28, height: 28, borderRadius: "50%", flexShrink: 0, background: (categoryColors[e.category] || T.accent) + "22", border: "1px solid " + (categoryColors[e.category] || T.accent) + "44", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 13 }}>{categoryIcons[e.category]}</div>
+                <div>
+                  <div style={{ fontSize: 15 }}>{e.event}</div>
+                  <div style={{ fontSize: 13, color: T.textLight, marginTop: 2 }}>{new Date(e.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}</div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {contact.birthday && (
+          <div style={{ marginBottom: 24 }}>
+            <div style={sectionTitle}>Key Dates</div>
+            <div style={Object.assign({}, infoBox, { display: "inline-block" })}>
+              <div style={{ fontSize: 11, color: T.textLight, marginBottom: 3 }}>BIRTHDAY</div>
+              <div style={{ fontSize: 16 }}>{new Date(contact.birthday).toLocaleDateString("en-US", { month: "long", day: "numeric" })}</div>
+              {bdayDays !== null && <div style={{ fontSize: 13, color: T.accent, marginTop: 2 }}>{bdayDays === 0 ? "Today! 🎂" : "in " + bdayDays + " days"}</div>}
+            </div>
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  function ContactsView() {
+    return (
+      <div>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 4 }}>
+          <div style={{ fontSize: 28, fontWeight: 400 }}>Your Circle 💜</div>
+          <button style={btn()} onClick={openAdd}>+ Add Person</button>
+        </div>
+        <div style={{ fontSize: 15, color: T.textLight, marginBottom: 28 }}>{contacts.length} {contacts.length === 1 ? "person" : "people"} · all close to your heart</div>
+        {contacts.length === 0 && (
+          <div style={Object.assign({}, card, { textAlign: "center", padding: 40 })}>
+            <div style={{ fontSize: 40, marginBottom: 12 }}>💜</div>
+            <div style={{ fontSize: 18, marginBottom: 8 }}>Your circle is empty</div>
+            <div style={{ color: T.textLight, marginBottom: 20 }}>Add the people who matter most to you.</div>
+            <button style={btn()} onClick={openAdd}>+ Add your first person</button>
+          </div>
+        )}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(230px, 1fr))", gap: 16 }}>
+          {contacts.map(function(c) {
+            var urgency = getNudgeUrgency(c);
+            var days = daysSince(c.lastContact);
+            var hasHardThing = c.lifeEvents.some(function(e) { return e.category === "health" || (e.category === "family" && e.event.toLowerCase().includes("diagnos")); });
+            var cadenceLabel = (CADENCE_OPTIONS.find(function(o) { return o.value === c.cadenceDays; }) || {}).label || "Custom";
+            var loveLangs = (c.loveLanguages || []).map(function(k) { return LOVE_LANGUAGES.find(function(l) { return l.key === k; }); }).filter(Boolean);
+            return (
+              <div key={c.id} style={Object.assign({}, card, { cursor: "pointer" })} onClick={function() { setSelectedContact(c); setView("profile"); }}>
+                <div style={{ display: "flex", gap: 12, alignItems: "center", marginBottom: 12 }}>
+                  <Avatar color={c.color} initials={c.initials} size={42} />
+                  <div>
+                    <div style={{ fontSize: 16 }}>{c.name}</div>
+                    <div style={{ fontSize: 13, color: T.textLight }}>{tierLabels[c.tier]} · {cadenceLabel.toLowerCase()}</div>
+                  </div>
+                </div>
+                {c.notes && <div style={{ fontSize: 14, color: T.textMid, lineHeight: 1.6, marginBottom: 10 }}>{c.notes.slice(0, 85)}{c.notes.length > 85 ? "…" : ""}</div>}
+                {loveLangs.length > 0 && <div style={{ marginBottom: 8 }}>{loveLangs.map(function(l) { return <span key={l.key} style={{ fontSize: 12, color: T.accent, marginRight: 6 }}>{l.icon} {l.label}</span>; })}</div>}
+                {hasHardThing && <div style={{ fontSize: 13, color: T.danger }}>💙 Going through something hard</div>}
+                {urgency !== "ok" && !hasHardThing && <div style={{ fontSize: 13, color: urgency === "overdue" ? T.danger : T.warning }}>{urgency === "overdue" ? "⚠ " : "• "}{days}d since last contact</div>}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    );
+  }
+
+  function EditModal() {
+    if (!editingContact) return null;
+    return (
+      <div style={modalOverlay} onClick={function() { setEditingContact(null); }}>
+        <div style={modalBox} onClick={function(e) { e.stopPropagation(); }}>
+          <div style={{ fontSize: 20, marginBottom: 20 }}>{isNew ? "Add New Person" : "Edit — " + editingContact.name}</div>
+
+          <div style={Object.assign({}, row2, { marginBottom: 16 })}>
+            <div>
+              <div style={fieldLabel}>Name *</div>
+              <input style={inputStyle} value={editingContact.name} onChange={function(e) { updateEdit("name", e.target.value); }} placeholder="Full name" />
+            </div>
+            <div>
+              <div style={fieldLabel}>Relationship</div>
+              <select style={selectStyle} value={editingContact.tier} onChange={function(e) { updateEdit("tier", e.target.value); }}>
+                <option value="close">Close Friend</option>
+                <option value="friend">Friend</option>
+                <option value="acquaintance">Acquaintance</option>
+              </select>
+            </div>
+          </div>
+
+          <div style={Object.assign({}, row2, { marginBottom: 16 })}>
+            <div>
+              <div style={fieldLabel}>Preferred Channel</div>
+              <select style={selectStyle} value={editingContact.preferredChannel} onChange={function(e) { updateEdit("preferredChannel", e.target.value); }}>
+                <option value="text">💬 Text</option>
+                <option value="call">📞 Call</option>
+                <option value="email">✉️ Email</option>
+              </select>
+            </div>
+            <div>
+              <div style={fieldLabel}>Check-in Cadence</div>
+              <select style={selectStyle} value={editingContact.cadenceDays} onChange={function(e) { updateEdit("cadenceDays", Number(e.target.value)); }}>
+                {CADENCE_OPTIONS.map(function(o) { return <option key={o.value} value={o.value}>{o.label}</option>; })}
+              </select>
+            </div>
+          </div>
+
+          <div style={{ marginBottom: 16 }}>
+            <div style={fieldLabel}>Birthday</div>
+            <input style={inputStyle} type="date" value={editingContact.birthday || ""} onChange={function(e) { updateEdit("birthday", e.target.value || null); }} />
+          </div>
+
+          <div style={{ marginBottom: 16 }}>
+            <div style={fieldLabel}>Notes — who are they?</div>
+            <textarea style={textareaStyle} value={editingContact.notes} onChange={function(e) { updateEdit("notes", e.target.value); }} placeholder="Hobbies, interests, personality, what makes them them…" />
+          </div>
+
+          <div style={{ marginBottom: 16 }}>
+            <div style={fieldLabel}>😄 What makes them laugh</div>
+            <input style={inputStyle} value={editingContact.whatMakesThemLaugh || ""} onChange={function(e) { updateEdit("whatMakesThemLaugh", e.target.value); }} placeholder="e.g. Dry humor, absurdist memes, self-deprecating jokes…" />
+          </div>
+
+          <div style={{ marginBottom: 16 }}>
+            <div style={fieldLabel}>✨ Currently into</div>
+            <input style={inputStyle} value={editingContact.currentlyInto || ""} onChange={function(e) { updateEdit("currentlyInto", e.target.value); }} placeholder="e.g. Pickleball, a new podcast, learning Italian…" />
+          </div>
+
+          <div style={{ marginBottom: 16 }}>
+            <div style={fieldLabel}>💙 What they're carrying right now</div>
+            <textarea style={Object.assign({}, textareaStyle, { minHeight: 60 })} value={editingContact.currentHardThing || ""} onChange={function(e) { updateEdit("currentHardThing", e.target.value); }} placeholder="Something hard, heavy, or uncertain in their life right now…" />
+          </div>
+
+          <div style={{ marginBottom: 16 }}>
+            <div style={fieldLabel}>🤲 How they like to be supported</div>
+            <input style={inputStyle} value={editingContact.howToSupport || ""} onChange={function(e) { updateEdit("howToSupport", e.target.value); }} placeholder="e.g. Distraction and humor, just listen, show up with food…" />
+          </div>
+
+          <div style={Object.assign({}, row2, { marginBottom: 16 })}>
+            <div>
+              <div style={fieldLabel}>🙏 Faith / Tradition</div>
+              <input style={inputStyle} value={editingContact.faith || ""} onChange={function(e) { updateEdit("faith", e.target.value); }} placeholder="e.g. Catholic, Jewish, non-denominational…" />
+            </div>
+            <div>
+              <div style={fieldLabel}>Prayer Requests</div>
+              <input style={inputStyle} value={editingContact.prayerRequests || ""} onChange={function(e) { updateEdit("prayerRequests", e.target.value); }} placeholder="What to be praying for them about…" />
+            </div>
+          </div>
+
+          <div style={{ marginBottom: 16 }}>
+            <div style={fieldLabel}>Love Language(s)</div>
+            <div style={{ display: "flex", flexWrap: "wrap" }}>
+              {LOVE_LANGUAGES.map(function(l) {
+                var active = (editingContact.loveLanguages || []).includes(l.key);
+                return (
+                  <div key={l.key} onClick={function() { toggleLL(l.key); }} style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "7px 14px", borderRadius: 20, fontSize: 14, cursor: "pointer", border: "1px solid " + (active ? T.accent : T.border), background: active ? T.accentLight : T.bg, color: active ? T.accent : T.textMid, marginRight: 8, marginBottom: 8, userSelect: "none" }}>
+                    {l.icon} {l.label}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          <div style={{ marginBottom: 16 }}>
+            <div style={fieldLabel}>Mailing Address</div>
+            <textarea style={Object.assign({}, textareaStyle, { minHeight: 55 })} value={editingContact.address} onChange={function(e) { updateEdit("address", e.target.value); }} placeholder="Street, City, State ZIP" />
+          </div>
+
+          <div style={Object.assign({}, row2, { marginBottom: 16 })}>
+            <div>
+              <div style={fieldLabel}>Favorite Restaurant</div>
+              <input style={inputStyle} value={editingContact.favoriteRestaurant} onChange={function(e) { updateEdit("favoriteRestaurant", e.target.value); }} placeholder="For DoorDash or a visit" />
+            </div>
+            <div>
+              <div style={fieldLabel}>Go-to Gesture</div>
+              <input style={inputStyle} value={editingContact.goToGesture} onChange={function(e) { updateEdit("goToGesture", e.target.value); }} placeholder="What they love receiving" />
+            </div>
+          </div>
+
+          <div style={Object.assign({}, row2, { marginBottom: 16 })}>
+            <div>
+              <div style={fieldLabel}>☕ Favorite Beverage</div>
+              <input style={inputStyle} value={editingContact.favoriteBeverage || ""} onChange={function(e) { updateEdit("favoriteBeverage", e.target.value); }} placeholder="e.g. Oat milk latte, sweet tea…" />
+            </div>
+            <div>
+              <div style={fieldLabel}>🍿 Favorite Snack</div>
+              <input style={inputStyle} value={editingContact.favoriteSnack || ""} onChange={function(e) { updateEdit("favoriteSnack", e.target.value); }} placeholder="e.g. Flamin' Hot Cheetos…" />
+            </div>
+          </div>
+
+          <div style={{ marginBottom: 16 }}>
+            <div style={fieldLabel}>🙈 Guilty Pleasure</div>
+            <input style={inputStyle} value={editingContact.guiltyPleasure || ""} onChange={function(e) { updateEdit("guiltyPleasure", e.target.value); }} placeholder="e.g. Reality TV, 2000s pop, true crime podcasts…" />
+          </div>
+
+          <div style={{ borderTop: "1px solid " + T.border, paddingTop: 16, marginBottom: 16 }}>
+            <div style={fieldLabel}>Partner</div>
+            <div style={row2}>
+              <input style={inputStyle} value={(editingContact.significantOther && editingContact.significantOther.name) || ""} onChange={function(e) { updateEditNested("significantOther", "name", e.target.value); }} placeholder="Name" />
+              <input style={inputStyle} type="date" value={(editingContact.significantOther && editingContact.significantOther.birthday) || ""} onChange={function(e) { updateEditNested("significantOther", "birthday", e.target.value); }} />
+            </div>
+          </div>
+
+          <div style={{ borderTop: "1px solid " + T.border, paddingTop: 16, marginBottom: 20 }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
+              <div style={fieldLabel}>Kids</div>
+              <button style={btn("sm")} onClick={addKid}>+ Add kid</button>
+            </div>
+            {(editingContact.kids || []).map(function(k, i) {
+              return (
+                <div key={i} style={Object.assign({}, row2, { marginBottom: 8 })}>
+                  <input style={inputStyle} value={k.name} onChange={function(e) { updateKid(i, "name", e.target.value); }} placeholder="Name" />
+                  <div style={{ display: "flex", gap: 6 }}>
+                    <input style={Object.assign({}, inputStyle, { flex: 1 })} type="date" value={k.birthday} onChange={function(e) { updateKid(i, "birthday", e.target.value); }} />
+                    <button style={Object.assign({}, btn("ghost"), { padding: "8px 11px" })} onClick={function() { removeKid(i); }}>×</button>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          <div style={{ borderTop: "1px solid " + T.border, paddingTop: 16, marginBottom: 20 }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
+              <div style={fieldLabel}>🐾 Pets</div>
+              <button style={btn("sm")} onClick={addPet}>+ Add pet</button>
+            </div>
+            {(editingContact.pets || []).map(function(p, i) {
+              return (
+                <div key={i} style={Object.assign({}, row2, { marginBottom: 8 })}>
+                  <input style={inputStyle} value={p.name} onChange={function(e) { updatePet(i, "name", e.target.value); }} placeholder="Name (e.g. Liko)" />
+                  <div style={{ display: "flex", gap: 6 }}>
+                    <input style={Object.assign({}, inputStyle, { flex: 1 })} value={p.type} onChange={function(e) { updatePet(i, "type", e.target.value); }} placeholder="Type (e.g. Golden retriever)" />
+                    <button style={Object.assign({}, btn("ghost"), { padding: "8px 11px" })} onClick={function() { removePet(i); }}>×</button>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          <div style={{ display: "flex", gap: 10 }}>
+            <button style={btn()} onClick={saveEdit}>{isNew ? "Add to Circle" : "Save"}</button>
+            <button style={btn("ghost")} onClick={function() { setEditingContact(null); }}>Cancel</button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div style={{ minHeight: "100vh", background: T.bg, color: T.text, fontFamily: "Georgia, 'Times New Roman', serif", fontSize: 16, display: "flex", flexDirection: "column" }}>
 
@@ -819,50 +1015,13 @@ export default function CircleKeeper() {
         )}
 
         <div style={{ flex: 1, padding: "28px 32px", overflowY: "auto" }}>
-          {view === "today" && (
-            <TodayView
-              contacts={contacts}
-              upcoming={upcoming}
-              nudges={nudges}
-              setDraftTarget={setDraftTarget}
-              setDraftContext={setDraftContext}
-            />
-          )}
-          {view === "contacts" && !selectedContact && (
-            <ContactsView
-              contacts={contacts}
-              setSelectedContact={setSelectedContact}
-              setView={setView}
-              openAdd={openAdd}
-            />
-          )}
-          {view === "profile" && selectedContact && (
-            <ContactProfile
-              contact={selectedContact}
-              setSelectedContact={setSelectedContact}
-              openEdit={openEdit}
-              setLogContact={setLogContact}
-              setDraftTarget={setDraftTarget}
-              setDraftContext={setDraftContext}
-              setConfirmDelete={setConfirmDelete}
-              setAddingEvent={setAddingEvent}
-            />
-          )}
+          {view === "today" && <TodayView />}
+          {view === "contacts" && !selectedContact && <ContactsView />}
+          {view === "profile" && selectedContact && <ContactProfile contact={selectedContact} />}
         </div>
       </div>
 
-      <EditModal
-        editingContact={editingContact}
-        isNew={isNew}
-        setEditingContact={setEditingContact}
-        updateEdit={updateEdit}
-        updateEditNested={updateEditNested}
-        toggleLL={toggleLL}
-        addKid={addKid}
-        updateKid={updateKid}
-        removeKid={removeKid}
-        saveEdit={saveEdit}
-      />
+      <EditModal />
 
       {confirmDelete && (
         <div style={modalOverlay} onClick={function() { setConfirmDelete(null); }}>

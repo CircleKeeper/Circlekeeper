@@ -20,86 +20,51 @@ const CONTACT_COLORS = ["#9b7fbd","#c47fa0","#7a9fbf","#6aab8a","#c4956a","#7fbd
 
 const DEFAULT_CONTACTS = [
   {
-    id: 1, name: "Claire Navarro", initials: "CN", tier: "close", cadenceDays: 3,
-    birthday: "1984-09-12", lastContact: "2026-04-22", preferredChannel: "text",
-    notes: "Elementary school teacher with a huge laugh and zero filter. Warm, funny, fiercely loyal. Going through a separation after 12 years of marriage and handling it with more grace than anyone has a right to.",
-    address: "214 Birchwood Lane\nAustin, TX 78701", favoriteRestaurant: "Lupe's Tacos", goToGesture: "Iced chai latte on her doorstep",
-    guiltyPleasure: "Real Housewives of anywhere", favoriteBeverage: "Iced chai latte", favoriteSnack: "Takis",
-    currentHardThing: "Navigating a separation after 12 years. Single parenting Mateo and Sofia while keeping it together for them.",
-    howToSupport: "Wants to talk it through — she needs to feel heard, not fixed. Just showing up is everything.",
-    whatMakesThemLaugh: "Self-deprecating humor and 90s sitcom references. She can quote Friends in her sleep.",
-    currentlyInto: "Pottery classes on Saturday mornings — says it's the only hour of the week that's just hers.",
-    faith: "Catholic", prayerRequests: "Peace through the separation. Strength for her kids, especially Mateo who's been struggling.",
-    loveLanguages: ["words", "time"],
-    significantOther: { name: "", birthday: "" },
-    kids: [{ name: "Mateo", birthday: "2016-03-08" }, { name: "Sofia", birthday: "2019-11-21" }],
-    pets: [],
+    id: 1, name: "Rhonda Elmore", initials: "RE", tier: "close", cadenceDays: 3,
+    birthday: null, lastContact: "2026-03-04", preferredChannel: "text",
+    notes: "Quilter and Jane Austen devotee. Warm and literary. Planning a Nova Scotia trip together.",
+    address: "", favoriteRestaurant: "", goToGesture: "", loveLanguages: [],
+    favoriteColor: "", aestheticVibe: "", guiltyPleasure: "", misc: "",
+    significantOther: { name: "", birthday: "" }, kids: [], pets: [],
     lifeEvents: [
-      { date: "2026-03-15", event: "Moved into her own apartment for the first time", category: "life" },
-      { date: "2026-01-10", event: "Told the kids about the separation", category: "family" },
+      { date: "2026-02-01", event: "Daughter diagnosed with Cushing's disease", category: "family" },
+      { date: "2026-03-01", event: "Planning Nova Scotia trip together", category: "personal" },
     ],
     color: "#9b7fbd"
   },
   {
-    id: 2, name: "Tom Okafor", initials: "TO", tier: "friend", cadenceDays: 14,
-    birthday: "1981-06-03", lastContact: "2026-04-01", preferredChannel: "call",
-    notes: "Former college roommate. Software engineer by day, woodworker by night. Dry humor, big heart, and incapable of small talk. Just relocated to Portland with his wife Kezia.",
-    address: "88 Maple Street\nPortland, OR 97201", favoriteRestaurant: "Pok Pok", goToGesture: "A good bottle of bourbon",
-    guiltyPleasure: "Competitive reality cooking shows — very serious about them", favoriteBeverage: "Black coffee, no exceptions", favoriteSnack: "Salt and vinegar chips",
-    currentHardThing: "",
-    howToSupport: "Doesn't process out loud — give him space and he'll come to you when he's ready.",
-    whatMakesThemLaugh: "Absurdist humor and terrible puns. The worse the pun, the better.",
-    currentlyInto: "Sourdough bread baking. He texts photos of every loaf.",
-    faith: "", prayerRequests: "",
-    loveLanguages: ["acts"],
-    significantOther: { name: "Kezia", birthday: "1983-02-14" },
-    kids: [],
-    pets: [{ name: "Biscuit", type: "Beagle" }],
+    id: 2, name: "Trish Bauer", initials: "TB", tier: "friend", cadenceDays: 14,
+    birthday: null, lastContact: "2026-02-01", preferredChannel: "text",
+    notes: "Family is her heart. Huge movie fan. Currently going through breast cancer treatment.",
+    address: "", favoriteRestaurant: "", goToGesture: "", loveLanguages: [],
+    favoriteColor: "", aestheticVibe: "", guiltyPleasure: "", misc: "",
+    significantOther: { name: "", birthday: "" }, kids: [], pets: [],
     lifeEvents: [
-      { date: "2026-02-01", event: "Relocated from Chicago to Portland", category: "life" },
-      { date: "2025-11-15", event: "Launched a woodworking Etsy shop — first sale in two weeks", category: "career" },
+      { date: "2026-01-15", event: "Began breast cancer treatment", category: "health" },
+    ],
+    color: "#c47fa0"
+  },
+  {
+    id: 3, name: "Dana Hoffman", initials: "DH", tier: "close", cadenceDays: 14,
+    birthday: "1980-05-04", lastContact: "2026-02-28", preferredChannel: "text",
+    notes: "Artist and creative spirit. Loves her dog Liko. Devoted Prince fan. Draws beautifully.",
+    address: "", favoriteRestaurant: "", goToGesture: "", loveLanguages: [],
+    favoriteColor: "", aestheticVibe: "", guiltyPleasure: "", misc: "",
+    significantOther: { name: "", birthday: "" }, kids: [], pets: [{ name: "Liko", type: "Dog" }],
+    lifeEvents: [
+      { date: "2026-02-10", event: "Started actively searching for a new job", category: "career" },
     ],
     color: "#7a9fbf"
   },
   {
-    id: 3, name: "Priya Mehta", initials: "PM", tier: "close", cadenceDays: 14,
-    birthday: "1986-04-28", lastContact: "2026-04-10", preferredChannel: "text",
-    notes: "Radiologist and quiet force of nature. Meticulous, deeply creative, and one of the kindest people alive. Huge Bollywood fan. Has been going through IVF for over a year — second round now.",
-    address: "", favoriteRestaurant: "Rasika (or any great Indian place)", goToGesture: "Drop off dinner — she never thinks to eat when she's stressed",
-    guiltyPleasure: "K-dramas until 1am", favoriteBeverage: "Masala chai, the real kind", favoriteSnack: "Mango with chili and lime",
-    currentHardThing: "Second round of IVF. She is hopeful but exhausted and trying not to let it take over her whole identity.",
-    howToSupport: "Doesn't want advice or silver linings — just company and normalcy. Treat her like a person, not a patient.",
-    whatMakesThemLaugh: "Her husband Raj's terrible dancing. And anything absurd — she has a surprisingly dark sense of humor.",
-    currentlyInto: "Watercolor painting. She's surprisingly good and very self-deprecating about it.",
-    faith: "Hindu", prayerRequests: "The IVF working. Peace either way.",
-    loveLanguages: ["time", "acts"],
-    significantOther: { name: "Raj", birthday: "1984-04-03" },
-    kids: [],
-    pets: [],
+    id: 4, name: "Shasta Foy", initials: "SF", tier: "close", cadenceDays: 14,
+    birthday: null, lastContact: "2026-01-15", preferredChannel: "text",
+    notes: "Fellow CEO. Cyclist and former basketball player. Exploring her second act.",
+    address: "", favoriteRestaurant: "", goToGesture: "", loveLanguages: [],
+    favoriteColor: "", aestheticVibe: "", guiltyPleasure: "", misc: "",
+    significantOther: { name: "", birthday: "" }, kids: [], pets: [],
     lifeEvents: [
-      { date: "2026-03-01", event: "Started second round of IVF", category: "health" },
-      { date: "2025-12-20", event: "Her mom visited from Mumbai for a month — really lifted her spirits", category: "family" },
-    ],
-    color: "#c4956a"
-  },
-  {
-    id: 4, name: "Becca Lawson", initials: "BL", tier: "close", cadenceDays: 7,
-    birthday: "1988-11-30", lastContact: "2026-04-18", preferredChannel: "text",
-    notes: "Stay-at-home mom turned entrepreneur. Launched a candle business from her kitchen that's actually taking off. Wildly creative, obsessively organized, and has the best meme game of anyone you know.",
-    address: "502 Clover Hill Rd\nNashville, TN 37205", favoriteRestaurant: "Hattie B's", goToGesture: "Send her a meme — she will lose it. Or a Diet Coke.",
-    guiltyPleasure: "True crime podcasts at 2am (her husband does not understand this)", favoriteBeverage: "Diet Coke — borderline religious about it", favoriteSnack: "Goldfish crackers by the handful",
-    currentHardThing: "",
-    howToSupport: "Hype her up — she second-guesses herself more than she lets on. She needs cheerleaders, not advisors.",
-    whatMakesThemLaugh: "Her kids' chaos. Parenting memes. Anything that captures the absurdity of being a mom.",
-    currentlyInto: "Her candle launch — working on getting into two local boutiques.",
-    faith: "Non-denominational Christian", prayerRequests: "The candle business finding its footing. Her husband Jake's job search — he's been looking for 4 months.",
-    loveLanguages: ["words", "gifts"],
-    significantOther: { name: "Jake", birthday: "1986-08-19" },
-    kids: [{ name: "Willa", birthday: "2018-05-14" }, { name: "Henry", birthday: "2021-02-03" }],
-    pets: [{ name: "Moose", type: "Golden retriever" }],
-    lifeEvents: [
-      { date: "2026-04-01", event: "Launched her candle business — Hearthside Co.", category: "career" },
-      { date: "2026-01-20", event: "Jake started a job search after his company downsized", category: "family" },
+      { date: "2026-01-01", event: "Began exploring her second act after stepping back from CEO role", category: "career" },
     ],
     color: "#6aab8a"
   },
@@ -128,10 +93,9 @@ function blankContact(id) {
     id: id, name: "", initials: "", tier: "friend", cadenceDays: 14,
     birthday: null, lastContact: new Date().toISOString().split("T")[0],
     preferredChannel: "text", notes: "", address: "", favoriteRestaurant: "",
-    goToGesture: "", guiltyPleasure: "", favoriteBeverage: "", favoriteSnack: "",
-    currentHardThing: "", howToSupport: "", whatMakesThemLaugh: "", currentlyInto: "",
-    faith: "", prayerRequests: "", pets: [], loveLanguages: [],
-    significantOther: { name: "", birthday: "" }, kids: [], lifeEvents: [],
+    goToGesture: "", favoriteColor: "", aestheticVibe: "", guiltyPleasure: "", misc: "",
+    loveLanguages: [],
+    significantOther: { name: "", birthday: "" }, kids: [], pets: [], lifeEvents: [],
     color: CONTACT_COLORS[Math.floor(Math.random() * CONTACT_COLORS.length)]
   };
 }
@@ -212,6 +176,7 @@ var sectionTitle = { fontSize: "11px", letterSpacing: "0.1em", textTransform: "u
 var fieldLabel = { fontSize: "11px", color: T.textLight, marginBottom: "6px", letterSpacing: "0.08em", textTransform: "uppercase" };
 var infoBox = { background: T.bg, border: "1px solid " + T.border, borderRadius: "10px", padding: "12px 16px", fontSize: "15px", color: T.textMid, lineHeight: 1.6 };
 var row2 = { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" };
+var row3 = { display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "12px" };
 var card = { background: T.bgCard, border: "1px solid " + T.border, borderRadius: "14px", padding: "20px", boxShadow: "0 2px 12px rgba(139,92,246,0.05)" };
 var eventRow = { display: "flex", alignItems: "center", gap: "12px", padding: "10px 0", borderBottom: "1px solid " + T.border };
 
@@ -538,6 +503,8 @@ export default function CircleKeeper() {
     var hasHardThing = contact.lifeEvents.some(function(e) { return e.category === "health" || (e.category === "family" && e.event.toLowerCase().includes("diagnos")); });
     var cadenceLabel = (CADENCE_OPTIONS.find(function(o) { return o.value === contact.cadenceDays; }) || {}).label || "Custom";
     var loveLangs = (contact.loveLanguages || []).map(function(k) { return LOVE_LANGUAGES.find(function(l) { return l.key === k; }); }).filter(Boolean);
+    var hasCareDetails = contact.address || contact.favoriteRestaurant || contact.goToGesture || contact.favoriteColor || contact.aestheticVibe || contact.guiltyPleasure;
+    var hasTheirWorld = (contact.significantOther && contact.significantOther.name) || (contact.kids || []).some(function(k) { return k.name; }) || (contact.pets || []).some(function(p) { return p.name; });
 
     return (
       <div>
@@ -576,50 +543,9 @@ export default function CircleKeeper() {
           </div>
         )}
 
-        {contact.whatMakesThemLaugh && (
-          <div style={{ marginBottom: 24 }}>
-            <div style={sectionTitle}>😄 What makes them laugh</div>
-            <div style={{ fontSize: 15, lineHeight: 1.7, color: T.textMid }}>{contact.whatMakesThemLaugh}</div>
-          </div>
-        )}
-
-        {contact.currentHardThing && (
-          <div style={{ marginBottom: 24 }}>
-            <div style={sectionTitle}>💙 What they're carrying right now</div>
-            <div style={{ background: "#fdf0f5", border: "1px solid #e8a0b044", borderRadius: 10, padding: "14px 16px", fontSize: 15, color: "#8a4060", lineHeight: 1.7 }}>
-              {contact.currentHardThing}
-            </div>
-          </div>
-        )}
-
-        {contact.howToSupport && (
-          <div style={{ marginBottom: 24 }}>
-            <div style={sectionTitle}>🤲 How they like to be supported</div>
-            <div style={{ background: T.accentLight, border: "1px solid " + T.accentMid, borderRadius: 10, padding: "14px 16px", fontSize: 15, color: T.textMid, lineHeight: 1.7 }}>
-              {contact.howToSupport}
-            </div>
-          </div>
-        )}
-
-        {(contact.faith || contact.prayerRequests) && (
-          <div style={{ marginBottom: 24 }}>
-            <div style={sectionTitle}>🙏 Faith & Prayer</div>
-            {contact.faith && (
-              <div style={{ fontSize: 13, color: T.textLight, marginBottom: contact.prayerRequests ? 10 : 0 }}>
-                <span style={{ textTransform: "uppercase", letterSpacing: "0.08em" }}>Tradition — </span>{contact.faith}
-              </div>
-            )}
-            {contact.prayerRequests && (
-              <div style={{ background: "#fdf8ed", border: "1px solid #e8d8a044", borderRadius: 10, padding: "14px 16px", fontSize: 15, color: "#7a6030", lineHeight: 1.7 }}>
-                {contact.prayerRequests}
-              </div>
-            )}
-          </div>
-        )}
-
         <div style={{ marginBottom: 24 }}>
           <div style={sectionTitle}>How to care well</div>
-          <div style={row2}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))", gap: 12 }}>
             {contact.address && (
               <div style={infoBox}>
                 <div style={{ fontSize: 11, color: T.textLight, marginBottom: 4 }}>📬 MAILING ADDRESS</div>
@@ -638,31 +564,25 @@ export default function CircleKeeper() {
                 {contact.goToGesture}
               </div>
             )}
-            {contact.favoriteBeverage && (
+            {contact.favoriteColor && (
               <div style={infoBox}>
-                <div style={{ fontSize: 11, color: T.textLight, marginBottom: 4 }}>☕ FAVORITE BEVERAGE</div>
-                {contact.favoriteBeverage}
+                <div style={{ fontSize: 11, color: T.textLight, marginBottom: 4 }}>🎨 FAVORITE COLOR</div>
+                {contact.favoriteColor}
               </div>
             )}
-            {contact.favoriteSnack && (
+            {contact.aestheticVibe && (
               <div style={infoBox}>
-                <div style={{ fontSize: 11, color: T.textLight, marginBottom: 4 }}>🍿 FAVORITE SNACK</div>
-                {contact.favoriteSnack}
+                <div style={{ fontSize: 11, color: T.textLight, marginBottom: 4 }}>🏡 THEIR AESTHETIC</div>
+                {contact.aestheticVibe}
               </div>
             )}
             {contact.guiltyPleasure && (
               <div style={infoBox}>
-                <div style={{ fontSize: 11, color: T.textLight, marginBottom: 4 }}>🙈 GUILTY PLEASURE</div>
+                <div style={{ fontSize: 11, color: T.textLight, marginBottom: 4 }}>😄 GUILTY PLEASURE</div>
                 {contact.guiltyPleasure}
               </div>
             )}
-            {contact.currentlyInto && (
-              <div style={infoBox}>
-                <div style={{ fontSize: 11, color: T.textLight, marginBottom: 4 }}>✨ CURRENTLY INTO</div>
-                {contact.currentlyInto}
-              </div>
-            )}
-            {!contact.address && !contact.favoriteRestaurant && !contact.goToGesture && !contact.favoriteBeverage && !contact.favoriteSnack && !contact.guiltyPleasure && !contact.currentlyInto && (
+            {!hasCareDetails && (
               <div style={{ color: T.textLight, fontSize: 15 }}>
                 No care details yet. <button style={{ background: "none", border: "none", color: T.accent, cursor: "pointer", fontFamily: "inherit", fontSize: 15, padding: 0 }} onClick={function() { openEdit(contact); }}>Add them →</button>
               </div>
@@ -670,7 +590,7 @@ export default function CircleKeeper() {
           </div>
         </div>
 
-        {(contact.significantOther && contact.significantOther.name || (contact.kids || []).some(function(k) { return k.name; }) || (contact.pets || []).some(function(p) { return p.name; })) && (
+        {hasTheirWorld && (
           <div style={{ marginBottom: 24 }}>
             <div style={sectionTitle}>Their world</div>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
@@ -732,6 +652,13 @@ export default function CircleKeeper() {
             </div>
           </div>
         )}
+
+        {contact.misc && (
+          <div style={{ marginBottom: 24 }}>
+            <div style={sectionTitle}>Additional Notes</div>
+            <div style={{ fontSize: 15, lineHeight: 1.7, color: T.textMid, background: T.bg, border: "1px solid " + T.border, borderRadius: 10, padding: "12px 16px" }}>{contact.misc}</div>
+          </div>
+        )}
       </div>
     );
   }
@@ -770,6 +697,7 @@ export default function CircleKeeper() {
                 </div>
                 {c.notes && <div style={{ fontSize: 14, color: T.textMid, lineHeight: 1.6, marginBottom: 10 }}>{c.notes.slice(0, 85)}{c.notes.length > 85 ? "…" : ""}</div>}
                 {loveLangs.length > 0 && <div style={{ marginBottom: 8 }}>{loveLangs.map(function(l) { return <span key={l.key} style={{ fontSize: 12, color: T.accent, marginRight: 6 }}>{l.icon} {l.label}</span>; })}</div>}
+                {(c.pets || []).some(function(p) { return p.name; }) && <div style={{ fontSize: 13, color: T.textLight, marginBottom: 4 }}>🐾 {(c.pets || []).filter(function(p) { return p.name; }).map(function(p) { return p.name; }).join(", ")}</div>}
                 {hasHardThing && <div style={{ fontSize: 13, color: T.danger }}>💙 Going through something hard</div>}
                 {urgency !== "ok" && !hasHardThing && <div style={{ fontSize: 13, color: urgency === "overdue" ? T.danger : T.warning }}>{urgency === "overdue" ? "⚠ " : "• "}{days}d since last contact</div>}
               </div>
@@ -830,37 +758,6 @@ export default function CircleKeeper() {
           </div>
 
           <div style={{ marginBottom: 16 }}>
-            <div style={fieldLabel}>😄 What makes them laugh</div>
-            <input style={inputStyle} value={editingContact.whatMakesThemLaugh || ""} onChange={function(e) { updateEdit("whatMakesThemLaugh", e.target.value); }} placeholder="e.g. Dry humor, absurdist memes, self-deprecating jokes…" />
-          </div>
-
-          <div style={{ marginBottom: 16 }}>
-            <div style={fieldLabel}>✨ Currently into</div>
-            <input style={inputStyle} value={editingContact.currentlyInto || ""} onChange={function(e) { updateEdit("currentlyInto", e.target.value); }} placeholder="e.g. Pickleball, a new podcast, learning Italian…" />
-          </div>
-
-          <div style={{ marginBottom: 16 }}>
-            <div style={fieldLabel}>💙 What they're carrying right now</div>
-            <textarea style={Object.assign({}, textareaStyle, { minHeight: 60 })} value={editingContact.currentHardThing || ""} onChange={function(e) { updateEdit("currentHardThing", e.target.value); }} placeholder="Something hard, heavy, or uncertain in their life right now…" />
-          </div>
-
-          <div style={{ marginBottom: 16 }}>
-            <div style={fieldLabel}>🤲 How they like to be supported</div>
-            <input style={inputStyle} value={editingContact.howToSupport || ""} onChange={function(e) { updateEdit("howToSupport", e.target.value); }} placeholder="e.g. Distraction and humor, just listen, show up with food…" />
-          </div>
-
-          <div style={Object.assign({}, row2, { marginBottom: 16 })}>
-            <div>
-              <div style={fieldLabel}>🙏 Faith / Tradition</div>
-              <input style={inputStyle} value={editingContact.faith || ""} onChange={function(e) { updateEdit("faith", e.target.value); }} placeholder="e.g. Catholic, Jewish, non-denominational…" />
-            </div>
-            <div>
-              <div style={fieldLabel}>Prayer Requests</div>
-              <input style={inputStyle} value={editingContact.prayerRequests || ""} onChange={function(e) { updateEdit("prayerRequests", e.target.value); }} placeholder="What to be praying for them about…" />
-            </div>
-          </div>
-
-          <div style={{ marginBottom: 16 }}>
             <div style={fieldLabel}>Love Language(s)</div>
             <div style={{ display: "flex", flexWrap: "wrap" }}>
               {LOVE_LANGUAGES.map(function(l) {
@@ -890,20 +787,19 @@ export default function CircleKeeper() {
             </div>
           </div>
 
-          <div style={Object.assign({}, row2, { marginBottom: 16 })}>
+          <div style={Object.assign({}, row3, { marginBottom: 16 })}>
             <div>
-              <div style={fieldLabel}>☕ Favorite Beverage</div>
-              <input style={inputStyle} value={editingContact.favoriteBeverage || ""} onChange={function(e) { updateEdit("favoriteBeverage", e.target.value); }} placeholder="e.g. Oat milk latte, sweet tea…" />
+              <div style={fieldLabel}>Favorite Color</div>
+              <input style={inputStyle} value={editingContact.favoriteColor || ""} onChange={function(e) { updateEdit("favoriteColor", e.target.value); }} placeholder="e.g. Sage green" />
             </div>
             <div>
-              <div style={fieldLabel}>🍿 Favorite Snack</div>
-              <input style={inputStyle} value={editingContact.favoriteSnack || ""} onChange={function(e) { updateEdit("favoriteSnack", e.target.value); }} placeholder="e.g. Flamin' Hot Cheetos…" />
+              <div style={fieldLabel}>Their Aesthetic</div>
+              <input style={inputStyle} value={editingContact.aestheticVibe || ""} onChange={function(e) { updateEdit("aestheticVibe", e.target.value); }} placeholder="e.g. Cozy modern, maximalist" />
             </div>
-          </div>
-
-          <div style={{ marginBottom: 16 }}>
-            <div style={fieldLabel}>🙈 Guilty Pleasure</div>
-            <input style={inputStyle} value={editingContact.guiltyPleasure || ""} onChange={function(e) { updateEdit("guiltyPleasure", e.target.value); }} placeholder="e.g. Reality TV, 2000s pop, true crime podcasts…" />
+            <div>
+              <div style={fieldLabel}>Guilty Pleasure</div>
+              <input style={inputStyle} value={editingContact.guiltyPleasure || ""} onChange={function(e) { updateEdit("guiltyPleasure", e.target.value); }} placeholder="e.g. Reality TV, Doritos" />
+            </div>
           </div>
 
           <div style={{ borderTop: "1px solid " + T.border, paddingTop: 16, marginBottom: 16 }}>
@@ -914,7 +810,7 @@ export default function CircleKeeper() {
             </div>
           </div>
 
-          <div style={{ borderTop: "1px solid " + T.border, paddingTop: 16, marginBottom: 20 }}>
+          <div style={{ borderTop: "1px solid " + T.border, paddingTop: 16, marginBottom: 16 }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
               <div style={fieldLabel}>Kids</div>
               <button style={btn("sm")} onClick={addKid}>+ Add kid</button>
@@ -932,22 +828,27 @@ export default function CircleKeeper() {
             })}
           </div>
 
-          <div style={{ borderTop: "1px solid " + T.border, paddingTop: 16, marginBottom: 20 }}>
+          <div style={{ borderTop: "1px solid " + T.border, paddingTop: 16, marginBottom: 16 }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
-              <div style={fieldLabel}>🐾 Pets</div>
+              <div style={fieldLabel}>Pets 🐾</div>
               <button style={btn("sm")} onClick={addPet}>+ Add pet</button>
             </div>
             {(editingContact.pets || []).map(function(p, i) {
               return (
                 <div key={i} style={Object.assign({}, row2, { marginBottom: 8 })}>
-                  <input style={inputStyle} value={p.name} onChange={function(e) { updatePet(i, "name", e.target.value); }} placeholder="Name (e.g. Liko)" />
+                  <input style={inputStyle} value={p.name} onChange={function(e) { updatePet(i, "name", e.target.value); }} placeholder="Pet's name" />
                   <div style={{ display: "flex", gap: 6 }}>
-                    <input style={Object.assign({}, inputStyle, { flex: 1 })} value={p.type} onChange={function(e) { updatePet(i, "type", e.target.value); }} placeholder="Type (e.g. Golden retriever)" />
+                    <input style={Object.assign({}, inputStyle, { flex: 1 })} value={p.type} onChange={function(e) { updatePet(i, "type", e.target.value); }} placeholder="e.g. Dog, Cat" />
                     <button style={Object.assign({}, btn("ghost"), { padding: "8px 11px" })} onClick={function() { removePet(i); }}>×</button>
                   </div>
                 </div>
               );
             })}
+          </div>
+
+          <div style={{ borderTop: "1px solid " + T.border, paddingTop: 16, marginBottom: 20 }}>
+            <div style={fieldLabel}>Additional Notes</div>
+            <textarea style={Object.assign({}, textareaStyle, { minHeight: 55 })} value={editingContact.misc || ""} onChange={function(e) { updateEdit("misc", e.target.value); }} placeholder="Anything else worth remembering — surgery dates, special circumstances, running jokes…" />
           </div>
 
           <div style={{ display: "flex", gap: 10 }}>

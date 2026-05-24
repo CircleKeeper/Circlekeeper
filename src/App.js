@@ -8,12 +8,13 @@ const CADENCE_OPTIONS = [
   { value: 90, label: "Quarterly" },
 ];
 
-const LOVE_LANGUAGES = [
-  { key: "words", label: "Words of Affirmation", icon: "💬" },
-  { key: "acts", label: "Acts of Service", icon: "🤝" },
-  { key: "gifts", label: "Receiving Gifts", icon: "🎁" },
-  { key: "time", label: "Quality Time", icon: "⏳" },
-  { key: "touch", label: "Physical Touch", icon: "🤗" },
+const CARE_STYLES = [
+  { key: "words", label: "Kind, encouraging words", icon: "💬" },
+  { key: "acts", label: "A helping hand", icon: "🤝" },
+  { key: "gifts", label: "Thoughtful gifts", icon: "🎁" },
+  { key: "time", label: "Unhurried time together", icon: "⏳" },
+  { key: "touch", label: "A warm hug", icon: "🤗" },
+  { key: "experiences", label: "Doing things together", icon: "🎨" },
 ];
 
 const CONTACT_COLORS = ["#9b7fbd","#c47fa0","#7a9fbf","#6aab8a","#c4956a","#7fbdbd","#bd7f9b","#9bbd7f"];
@@ -23,8 +24,9 @@ const DEFAULT_CONTACTS = [
     id: 1, name: "Rhonda Elmore", initials: "RE", tier: "close", cadenceDays: 3,
     birthday: null, lastContact: "2026-03-04", preferredChannel: "text",
     notes: "Quilter and Jane Austen devotee. Warm and literary. Planning a Nova Scotia trip together.",
-    address: "", favoriteRestaurant: "", goToGesture: "", loveLanguages: [],
+    address: "", favoriteRestaurant: "", goToGesture: "", careStyles: [],
     favoriteColor: "", aestheticVibe: "", guiltyPleasure: "", misc: "",
+    hardThing: { active: false, what: "", keyDate: "" },
     significantOther: { name: "", birthday: "" }, kids: [], pets: [],
     lifeEvents: [
       { date: "2026-02-01", event: "Daughter diagnosed with Cushing's disease", category: "family" },
@@ -36,8 +38,9 @@ const DEFAULT_CONTACTS = [
     id: 2, name: "Trish Bauer", initials: "TB", tier: "friend", cadenceDays: 14,
     birthday: null, lastContact: "2026-02-01", preferredChannel: "text",
     notes: "Family is her heart. Huge movie fan. Currently going through breast cancer treatment.",
-    address: "", favoriteRestaurant: "", goToGesture: "", loveLanguages: [],
+    address: "", favoriteRestaurant: "", goToGesture: "", careStyles: [],
     favoriteColor: "", aestheticVibe: "", guiltyPleasure: "", misc: "",
+    hardThing: { active: true, what: "Going through breast cancer treatment and recovery", keyDate: "" },
     significantOther: { name: "", birthday: "" }, kids: [], pets: [],
     lifeEvents: [
       { date: "2026-01-15", event: "Began breast cancer treatment", category: "health" },
@@ -48,8 +51,9 @@ const DEFAULT_CONTACTS = [
     id: 3, name: "Dana Hoffman", initials: "DH", tier: "close", cadenceDays: 14,
     birthday: "1980-05-04", lastContact: "2026-02-28", preferredChannel: "text",
     notes: "Artist and creative spirit. Loves her dog Liko. Devoted Prince fan. Draws beautifully.",
-    address: "", favoriteRestaurant: "", goToGesture: "", loveLanguages: [],
+    address: "", favoriteRestaurant: "", goToGesture: "", careStyles: [],
     favoriteColor: "", aestheticVibe: "", guiltyPleasure: "", misc: "",
+    hardThing: { active: false, what: "", keyDate: "" },
     significantOther: { name: "", birthday: "" }, kids: [], pets: [{ name: "Liko", type: "Dog" }],
     lifeEvents: [
       { date: "2026-02-10", event: "Started actively searching for a new job", category: "career" },
@@ -60,8 +64,9 @@ const DEFAULT_CONTACTS = [
     id: 4, name: "Shasta Foy", initials: "SF", tier: "close", cadenceDays: 14,
     birthday: null, lastContact: "2026-01-15", preferredChannel: "text",
     notes: "Fellow CEO. Cyclist and former basketball player. Exploring her second act.",
-    address: "", favoriteRestaurant: "", goToGesture: "", loveLanguages: [],
+    address: "", favoriteRestaurant: "", goToGesture: "", careStyles: [],
     favoriteColor: "", aestheticVibe: "", guiltyPleasure: "", misc: "",
+    hardThing: { active: false, what: "", keyDate: "" },
     significantOther: { name: "", birthday: "" }, kids: [], pets: [],
     lifeEvents: [
       { date: "2026-01-01", event: "Began exploring her second act after stepping back from CEO role", category: "career" },
@@ -94,7 +99,8 @@ function blankContact(id) {
     birthday: null, lastContact: new Date().toISOString().split("T")[0],
     preferredChannel: "text", notes: "", address: "", favoriteRestaurant: "",
     goToGesture: "", favoriteColor: "", aestheticVibe: "", guiltyPleasure: "", misc: "",
-    loveLanguages: [],
+    careStyles: [],
+    hardThing: { active: false, what: "", keyDate: "" },
     significantOther: { name: "", birthday: "" }, kids: [], pets: [], lifeEvents: [],
     color: CONTACT_COLORS[Math.floor(Math.random() * CONTACT_COLORS.length)]
   };
@@ -153,6 +159,13 @@ function getUpcomingDates(contacts) {
     (c.kids || []).forEach(function(k) {
       if (k.name && k.birthday) addDate(k.birthday, k.name + "'s Birthday (" + c.name + "'s kid)");
     });
+    if (c.hardThing && c.hardThing.active && c.hardThing.keyDate) {
+      var ht = new Date(c.hardThing.keyDate);
+      var htDays = daysBetween(today, ht);
+      if (htDays >= -1 && htDays <= 60) {
+        events.push({ contact: c, label: c.name + " — " + (c.hardThing.what || "Key date"), days: htDays, isHardThing: true });
+      }
+    }
   });
   return events.sort(function(a, b) { return a.days - b.days; });
 }
@@ -267,11 +280,11 @@ export default function CircleKeeper() {
     });
   }
 
-  function toggleLL(key) {
+  function toggleCareStyle(key) {
     setEditingContact(function(prev) {
-      var langs = prev.loveLanguages || [];
-      var next = langs.includes(key) ? langs.filter(function(l) { return l !== key; }) : langs.concat([key]);
-      return Object.assign({}, prev, { loveLanguages: next });
+      var styles = prev.careStyles || [];
+      var next = styles.includes(key) ? styles.filter(function(s) { return s !== key; }) : styles.concat([key]);
+      return Object.assign({}, prev, { careStyles: next });
     });
   }
 
@@ -379,11 +392,12 @@ export default function CircleKeeper() {
     setDraftLoading(true);
     setDraftResult("");
     var recentEvent = contact.lifeEvents[0];
-    var loveLangs = (contact.loveLanguages || []).map(function(k) {
-      var l = LOVE_LANGUAGES.find(function(x) { return x.key === k; });
-      return l ? l.label : null;
+    var careStyleLabels = (contact.careStyles || []).map(function(k) {
+      var s = CARE_STYLES.find(function(x) { return x.key === k; });
+      return s ? s.label : null;
     }).filter(Boolean);
-    var prompt = "You are a warm assistant helping someone stay genuinely connected with a friend.\n\nFriend: " + contact.name + "\nRelationship: " + contact.tier + " friend\nAbout them: " + contact.notes + "\n" + (recentEvent ? "Most significant thing in their life: " + recentEvent.event + "\n" : "") + (contact.goToGesture ? "What they love receiving: " + contact.goToGesture + "\n" : "") + (loveLangs.length ? "Love language(s): " + loveLangs.join(", ") + "\n" : "") + "Preferred channel: " + contact.preferredChannel + "\n" + (context ? "Context: " + context + "\n" : "") + "\nWrite a short, genuine, warm message (2-4 sentences). Sound like a caring real friend. Be specific to their life. If they are going through something hard, lead with warmth. Do not use cliches. Do not say 'thinking of you' or 'reaching out' or 'just checking in'.";
+    var hardThing = contact.hardThing && contact.hardThing.active && contact.hardThing.what;
+    var prompt = "You are a warm assistant helping someone stay genuinely connected with a friend.\n\nFriend: " + contact.name + "\nRelationship: " + contact.tier + " friend\nAbout them: " + contact.notes + "\n" + (hardThing ? "They are going through something hard: " + contact.hardThing.what + "\n" : "") + (recentEvent ? "Most significant thing in their life: " + recentEvent.event + "\n" : "") + (contact.goToGesture ? "What they love receiving: " + contact.goToGesture + "\n" : "") + (careStyleLabels.length ? "How they feel loved: " + careStyleLabels.join(", ") + "\n" : "") + "Preferred channel: " + contact.preferredChannel + "\n" + (context ? "Context: " + context + "\n" : "") + "\nWrite a short, genuine, warm message (2-4 sentences). Sound like a caring real friend. Be specific to their life. If they are going through something hard, lead with warmth. Do not use cliches. Do not say 'thinking of you' or 'reaching out' or 'just checking in'.";
     try {
       var res = await fetch("https://api.anthropic.com/v1/messages", {
         method: "POST",
@@ -436,12 +450,15 @@ export default function CircleKeeper() {
             {upcoming.map(function(u, i) {
               return (
                 <div key={i} style={eventRow}>
-                  <Avatar color={u.contact.color} initials={u.contact.initials} size={32} />
+                  {u.isHardThing
+                    ? <div style={{ width: 32, height: 32, borderRadius: "50%", background: "#fdf0f5", border: "1px solid #e8a0b044", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 15, flexShrink: 0 }}>💙</div>
+                    : <Avatar color={u.contact.color} initials={u.contact.initials} size={32} />
+                  }
                   <div style={{ flex: 1 }}>
                     <div style={{ fontSize: 15 }}>{u.label}</div>
-                    <div style={{ fontSize: 13, color: T.textLight }}>{u.days === 0 ? "Today!" : "in " + u.days + " days"}</div>
+                    <div style={{ fontSize: 13, color: T.textLight }}>{u.days === 0 ? "Today" : u.days < 0 ? Math.abs(u.days) + "d ago" : "in " + u.days + " days"}</div>
                   </div>
-                  <button style={btn("secondary")} onClick={function() { setDraftTarget(u.contact); setDraftContext(u.label + (u.days === 0 ? " is today!" : " is in " + u.days + " days")); }}>Draft</button>
+                  <button style={btn("secondary")} onClick={function() { setDraftTarget(u.contact); setDraftContext(u.label + (u.days === 0 ? " is today" : " is in " + u.days + " days")); }}>Draft</button>
                 </div>
               );
             })}
@@ -500,9 +517,9 @@ export default function CircleKeeper() {
     var days = daysSince(contact.lastContact);
     var bday = nextOccurrence(contact.birthday);
     var bdayDays = bday ? daysBetween(new Date(), bday) : null;
-    var hasHardThing = contact.lifeEvents.some(function(e) { return e.category === "health" || (e.category === "family" && e.event.toLowerCase().includes("diagnos")); });
+    var hardThing = contact.hardThing && contact.hardThing.active;
     var cadenceLabel = (CADENCE_OPTIONS.find(function(o) { return o.value === contact.cadenceDays; }) || {}).label || "Custom";
-    var loveLangs = (contact.loveLanguages || []).map(function(k) { return LOVE_LANGUAGES.find(function(l) { return l.key === k; }); }).filter(Boolean);
+    var careStyleItems = (contact.careStyles || []).map(function(k) { return CARE_STYLES.find(function(s) { return s.key === k; }); }).filter(Boolean);
     var hasCareDetails = contact.address || contact.favoriteRestaurant || contact.goToGesture || contact.favoriteColor || contact.aestheticVibe || contact.guiltyPleasure;
     var hasTheirWorld = (contact.significantOther && contact.significantOther.name) || (contact.kids || []).some(function(k) { return k.name; }) || (contact.pets || []).some(function(p) { return p.name; });
 
@@ -511,9 +528,16 @@ export default function CircleKeeper() {
         <button style={btn("sm")} onClick={function() { setSelectedContact(null); }}>← Back</button>
         <div style={{ height: 20 }} />
 
-        {hasHardThing && (
-          <div style={{ background: "#fdf0f5", border: "1px solid #e8a0b044", borderRadius: 10, padding: "12px 16px", fontSize: 14, color: "#8a4060", lineHeight: 1.6, marginBottom: 16 }}>
-            💙 {contact.name} is going through something difficult. A simple, genuine message goes a long way.
+        {hardThing && (
+          <div style={{ background: "#fdf0f5", border: "1px solid #e8a0b044", borderRadius: 10, padding: "14px 18px", fontSize: 14, color: "#8a4060", lineHeight: 1.7, marginBottom: 16 }}>
+            <div style={{ fontWeight: 600, marginBottom: 4 }}>💙 {contact.name} is going through something hard</div>
+            {contact.hardThing.what && <div style={{ marginBottom: contact.hardThing.keyDate ? 6 : 0 }}>{contact.hardThing.what}</div>}
+            {contact.hardThing.keyDate && (
+              <div style={{ fontSize: 13, color: "#a0506e" }}>
+                📅 Key date: {new Date(contact.hardThing.keyDate).toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric", year: "numeric" })}
+              </div>
+            )}
+            <button style={Object.assign({}, btn("sm"), { marginTop: 10, fontSize: 13, color: T.danger, borderColor: "#e8a0b044" })} onClick={function() { setDraftTarget(contact); setDraftContext(contact.hardThing.what || ""); }}>Draft a message</button>
           </div>
         )}
 
@@ -525,7 +549,7 @@ export default function CircleKeeper() {
             <div>
               {urgency !== "ok" && <Tag color={urgency === "overdue" ? T.danger : T.warning}>{days}d since contact</Tag>}
               {bdayDays !== null && bdayDays <= 60 && <Tag color={T.warm}>🎂 Birthday in {bdayDays}d</Tag>}
-              {loveLangs.map(function(l) { return <Tag key={l.key} color={T.accent}>{l.icon} {l.label}</Tag>; })}
+              {careStyleItems.map(function(s) { return <Tag key={s.key} color={T.accent}>{s.icon} {s.label}</Tag>; })}
             </div>
           </div>
           <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
@@ -683,9 +707,9 @@ export default function CircleKeeper() {
           {contacts.map(function(c) {
             var urgency = getNudgeUrgency(c);
             var days = daysSince(c.lastContact);
-            var hasHardThing = c.lifeEvents.some(function(e) { return e.category === "health" || (e.category === "family" && e.event.toLowerCase().includes("diagnos")); });
+            var hardThing = c.hardThing && c.hardThing.active;
             var cadenceLabel = (CADENCE_OPTIONS.find(function(o) { return o.value === c.cadenceDays; }) || {}).label || "Custom";
-            var loveLangs = (c.loveLanguages || []).map(function(k) { return LOVE_LANGUAGES.find(function(l) { return l.key === k; }); }).filter(Boolean);
+            var careStyleItems = (c.careStyles || []).map(function(k) { return CARE_STYLES.find(function(s) { return s.key === k; }); }).filter(Boolean);
             return (
               <div key={c.id} style={Object.assign({}, card, { cursor: "pointer" })} onClick={function() { setSelectedContact(c); setView("profile"); }}>
                 <div style={{ display: "flex", gap: 12, alignItems: "center", marginBottom: 12 }}>
@@ -696,10 +720,10 @@ export default function CircleKeeper() {
                   </div>
                 </div>
                 {c.notes && <div style={{ fontSize: 14, color: T.textMid, lineHeight: 1.6, marginBottom: 10 }}>{c.notes.slice(0, 85)}{c.notes.length > 85 ? "…" : ""}</div>}
-                {loveLangs.length > 0 && <div style={{ marginBottom: 8 }}>{loveLangs.map(function(l) { return <span key={l.key} style={{ fontSize: 12, color: T.accent, marginRight: 6 }}>{l.icon} {l.label}</span>; })}</div>}
+                {careStyleItems.length > 0 && <div style={{ marginBottom: 8 }}>{careStyleItems.map(function(s) { return <span key={s.key} style={{ fontSize: 12, color: T.accent, marginRight: 6 }}>{s.icon} {s.label}</span>; })}</div>}
                 {(c.pets || []).some(function(p) { return p.name; }) && <div style={{ fontSize: 13, color: T.textLight, marginBottom: 4 }}>🐾 {(c.pets || []).filter(function(p) { return p.name; }).map(function(p) { return p.name; }).join(", ")}</div>}
-                {hasHardThing && <div style={{ fontSize: 13, color: T.danger }}>💙 Going through something hard</div>}
-                {urgency !== "ok" && !hasHardThing && <div style={{ fontSize: 13, color: urgency === "overdue" ? T.danger : T.warning }}>{urgency === "overdue" ? "⚠ " : "• "}{days}d since last contact</div>}
+                {hardThing && <div style={{ fontSize: 13, color: T.danger }}>💙 Going through something hard</div>}
+                {urgency !== "ok" && !hardThing && <div style={{ fontSize: 13, color: urgency === "overdue" ? T.danger : T.warning }}>{urgency === "overdue" ? "⚠ " : "• "}{days}d since last contact</div>}
               </div>
             );
           })}
@@ -710,6 +734,7 @@ export default function CircleKeeper() {
 
   function EditModal() {
     if (!editingContact) return null;
+    var ht = editingContact.hardThing || { active: false, what: "", keyDate: "" };
     return (
       <div style={modalOverlay} onClick={function() { setEditingContact(null); }}>
         <div style={modalBox} onClick={function(e) { e.stopPropagation(); }}>
@@ -757,14 +782,36 @@ export default function CircleKeeper() {
             <textarea style={textareaStyle} value={editingContact.notes} onChange={function(e) { updateEdit("notes", e.target.value); }} placeholder="Hobbies, interests, personality, what makes them them…" />
           </div>
 
+          <div style={{ borderTop: "1px solid " + T.border, paddingTop: 16, marginBottom: 16 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 12 }}>
+              <div style={{ fontSize: 11, color: T.textLight, letterSpacing: "0.08em", textTransform: "uppercase" }}>💙 Going through something hard</div>
+              <div onClick={function() { updateEditNested("hardThing", "active", !ht.active); }} style={{ width: 40, height: 22, borderRadius: 11, background: ht.active ? T.danger : T.border, cursor: "pointer", position: "relative", transition: "background 0.2s", flexShrink: 0 }}>
+                <div style={{ position: "absolute", top: 3, left: ht.active ? 21 : 3, width: 16, height: 16, borderRadius: "50%", background: "#fff", transition: "left 0.2s", boxShadow: "0 1px 3px rgba(0,0,0,0.2)" }} />
+              </div>
+            </div>
+            {ht.active && (
+              <div>
+                <div style={{ marginBottom: 10 }}>
+                  <div style={fieldLabel}>What are they going through?</div>
+                  <textarea style={Object.assign({}, textareaStyle, { minHeight: 55 })} value={ht.what} onChange={function(e) { updateEditNested("hardThing", "what", e.target.value); }} placeholder="e.g. Surgery on March 15th, going through a divorce…" />
+                </div>
+                <div>
+                  <div style={fieldLabel}>Key date to remember (optional)</div>
+                  <input style={inputStyle} type="date" value={ht.keyDate} onChange={function(e) { updateEditNested("hardThing", "keyDate", e.target.value); }} />
+                  <div style={{ fontSize: 12, color: T.textLight, marginTop: 5 }}>This date will appear in your Upcoming Dates on the Today view so you don't forget.</div>
+                </div>
+              </div>
+            )}
+          </div>
+
           <div style={{ marginBottom: 16 }}>
-            <div style={fieldLabel}>Love Language(s)</div>
+            <div style={fieldLabel}>How they feel loved</div>
             <div style={{ display: "flex", flexWrap: "wrap" }}>
-              {LOVE_LANGUAGES.map(function(l) {
-                var active = (editingContact.loveLanguages || []).includes(l.key);
+              {CARE_STYLES.map(function(s) {
+                var active = (editingContact.careStyles || []).includes(s.key);
                 return (
-                  <div key={l.key} onClick={function() { toggleLL(l.key); }} style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "7px 14px", borderRadius: 20, fontSize: 14, cursor: "pointer", border: "1px solid " + (active ? T.accent : T.border), background: active ? T.accentLight : T.bg, color: active ? T.accent : T.textMid, marginRight: 8, marginBottom: 8, userSelect: "none" }}>
-                    {l.icon} {l.label}
+                  <div key={s.key} onClick={function() { toggleCareStyle(s.key); }} style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "7px 14px", borderRadius: 20, fontSize: 14, cursor: "pointer", border: "1px solid " + (active ? T.accent : T.border), background: active ? T.accentLight : T.bg, color: active ? T.accent : T.textMid, marginRight: 8, marginBottom: 8, userSelect: "none" }}>
+                    {s.icon} {s.label}
                   </div>
                 );
               })}
@@ -848,7 +895,7 @@ export default function CircleKeeper() {
 
           <div style={{ borderTop: "1px solid " + T.border, paddingTop: 16, marginBottom: 20 }}>
             <div style={fieldLabel}>Additional Notes</div>
-            <textarea style={Object.assign({}, textareaStyle, { minHeight: 55 })} value={editingContact.misc || ""} onChange={function(e) { updateEdit("misc", e.target.value); }} placeholder="Anything else worth remembering — surgery dates, special circumstances, running jokes…" />
+            <textarea style={Object.assign({}, textareaStyle, { minHeight: 55 })} value={editingContact.misc || ""} onChange={function(e) { updateEdit("misc", e.target.value); }} placeholder="Anything else worth remembering — running jokes, special circumstances, things that don't fit anywhere else…" />
           </div>
 
           <div style={{ display: "flex", gap: 10 }}>
